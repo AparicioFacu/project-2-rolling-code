@@ -1,3 +1,4 @@
+// elementos del html
 const btnNewProduct = document.getElementById('new-product-btn');
 const btnListsProducts = document.getElementById('list-products-btn');
 const mostrarFormNuevoProducto = () => {
@@ -11,16 +12,26 @@ const listarTodosLosProductos = () => {
 
 btnNewProduct.addEventListener('click', mostrarFormNuevoProducto)
 btnListsProducts.addEventListener('click', listarTodosLosProductos)
+
 //Funcion que genera un id unico para cada elemento
-function create_UUID(){
+function create_UUID() {
     var dt = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = (dt + Math.random()*16)%16 | 0;
-        dt = Math.floor(dt/16);
-        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (dt + Math.random() * 16) % 16 | 0;
+        dt = Math.floor(dt / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
     return uuid;
 }
+
+const productosJSON = localStorage.getItem('productos');
+let productos = JSON.parse(productosJSON) || [];
+
+//Guarda el producto en local storage
+function guardarProducto() {
+    localStorage.setItem('productos', JSON.stringify(productos))
+}
+
 //Funcion que maneja el submit del formulario para dar de alta un nuevo producto
 const createNewProduct = (event) => {
     event.preventDefault();
@@ -30,27 +41,29 @@ const createNewProduct = (event) => {
     const precio = document.getElementById('precio').value;
     const imagen = document.getElementById('imgInp')
     console.log(imagen.value)
-    const [file]=imagen.files;
+    const [file] = imagen.files;
     const url = URL.createObjectURL(file);
     console.log(url);
+    guardarProducto()
     //Evento que maneja la suba de archivos
+
     const nuevoProducto = {
         id: create_UUID(),
         titulo,
         descripcion,
         precio,
-        url
+        url,
     }
     console.log(nuevoProducto);
-    //Guardar el producto en local storage
+
 
     //limpiar formulario
     limpiarFormulario();
     //Mostrar elmsj de producto creado exitosamente
     const msjError = document.getElementById('msj-error-login')
-    msjError.innerHTML="Producto creado exitosamente"
+    msjError.innerHTML = "Producto creado exitosamente"
     msjError.setAttribute('class', 'alert alert-success');
-    setTimeout(()=>{
+    setTimeout(() => {
         msjError.setAttribute('class', 'd-none')
         const btnCloseForm = document.getElementById('btn-close-form');
         btnCloseForm.click();
