@@ -42,3 +42,18 @@
   width: 100%;
   object-fit: cover;
 }
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.green-background{
+  background: rgb(107, 241, 107);
+}
+
+.gray-font {
+  color: gray;
+}
