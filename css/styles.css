@@ -1,9 +1,11 @@
+
 .btn-login-class {
   border: none;
   background: transparent;
   padding: 0;
 }
 
+/* ESTILOS DE ADMIN */
 .new-product-container {
   display: flex;
   justify-content: center;

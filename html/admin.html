@@ -56,7 +56,7 @@
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mx-2 mb-5 option-styles-container">
                         <p class="text-center">Add new product</p>
-                        <div id="new-product-btn" class="new-product-container" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i></div>
+                        <div id="new-product-btn" class="new-product-container" data-bs-toggle="modal" data-bs-target="#modalNewProduct"><i class="fas fa-plus-circle"></i></div>
                     </div>
                     <div class="col mx-2 mb-5 option-styles-container">
                         <p class="text-center">List all products</p>
@@ -70,13 +70,10 @@
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="../js/products.js"></script>
     </body>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <!-- Modal Crear Nuevo Producto-->
+    <div class="modal fade" id="modalNewProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -113,4 +110,9 @@
         </div>
         </div>
     </div>
+
+            <!-- Bootstrap core JS-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Core theme JS-->
+            <script src="../js/products.js"></script>
 </html>
