@@ -77,3 +77,4 @@ const limpiarFormulario = () => {
     document.getElementById('precio').value = "";
     document.getElementById('imgInp').value = null;
 }
+
