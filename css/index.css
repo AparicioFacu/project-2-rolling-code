@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(2, 9, 11, 1) 0%,
+        rgba(22, 86, 110, 1) 50%,
+        rgba(2, 9, 11, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    color: rgba(247, 247, 247, 0.849);
+    font-family: "Teko", sans-serif;
+}
+/* CAROUSEL CONTAINER*/
+/* image */
+.game-image {
+    background-image: url(https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628178941/Video%20Games/pugb1_kwch2r.jpg);
+    position: relative;
+    min-width: 300px;
+    min-height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 5px;
+    margin-right: 0;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.692);
+    transition: 0.8s;
+}
+
+/* Button BUYNOW */
+.game-image button{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgb(19, 97, 128);
+    background: linear-gradient(180deg, rgba(19, 97, 128, 1) 30%, rgba(13, 120, 167, 1) 60%, rgba(0, 172, 255, 1) 90%);
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    border: 2px outset rgba(13, 120, 167, 1);
+}
+.game-image button:hover {
+    filter: brightness(120%);
+    box-shadow: 0px 0px 2px 1px rgb(19, 97, 128);
+}
+/* Description */
+.game-description {
+    background-image: url(https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628264142/Video%20Games/fondo1_otmhqe.png);
+    border: ridge rgba(15, 74, 97, 1);
+    border-left: 0;
+    margin: 5px 5px 5px 0px;
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+}
+.game-description p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: rgb(44, 169, 185);
+}
+.game-description h5 {
+    margin: 1rem 0;
+}
+.game-description img {
+    max-width: 80%;
+    margin:0 0.5rem 0.3rem 0;
+}
+.game-description span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    border: 1px solid black;
+    background-color: rgba(66, 66, 66, 0.473);
+    padding: 3px;
+}
+
+/* Button prev-next Bootstrap Carousel */
+.btn-carousel-prev {
+    position: absolute;
+    top: 35%;
+    bottom: 30%;
+    z-index: 1;
+    width: 3%;
+    background: rgb(7, 125, 179);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 172, 255, 1) 0%,
+        rgba(7, 125, 179, 0.8) 0%,
+        rgba(15, 74, 97, 0.5) 50%,
+        rgba(18, 23, 24, 0) 100%
+    );
+}
+.btn-carousel-next {
+    position: absolute;
+    top: 35%;
+    bottom: 30%;
+    z-index: 1;
+    width: 3%;
+    background: rgb(18, 23, 24);
+    background: linear-gradient(
+        90deg,
+        rgba(18, 23, 24, 0) 0%,
+        rgba(15, 74, 97, 0.5) 50%,
+        rgba(7, 125, 179, 0.8) 100%,
+        rgba(0, 172, 255, 1) 100%
+    );
+}
+.btn-carousel-icon {
+    display: inline-block;
+    width: 100% !important;
+    height: 100% !important;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 50% 50%;
+}
