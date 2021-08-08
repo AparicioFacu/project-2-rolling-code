@@ -56,7 +56,6 @@ const createNewProduct = (event) => {
     }
     console.log(nuevoProducto);
 
-
     //limpiar formulario
     limpiarFormulario();
     //Mostrar elmsj de producto creado exitosamente
