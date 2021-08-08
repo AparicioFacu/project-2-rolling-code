@@ -24,7 +24,7 @@ const signUpUsuario  = (event) => {
         email: emailInput.value,
         pass: passInput.value,
         fullname: nameInput.value,
-        role: 'admin'
+        role: 'basic'
     }
     console.log(newUser)
     //Verificamos que no sea un email repetido
