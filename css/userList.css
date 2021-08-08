@@ -1,0 +1,71 @@
+.table-container{
+    border-radius: 3px;
+    background-color: #2a3338;
+    margin: 0 auto;
+    font-size: 14px;
+    color: white;
+}
+.table-container .buscar input{
+    width: 100%;
+    height: 38px;
+    background-color: rgb(61,68,73);
+    display: block;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: solid 1px;
+    color: white;
+}
+.table-container .paginacion{
+    padding: 12px;
+    align-items: baseline;
+}
+.table-container .paginacion .lista{
+    width: 50%;
+}
+.tablebody button{
+    color: white;
+    box-sizing: border-box;
+    border:0;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+}
+.paginas{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+.paginas button{
+    width: 50px;
+    height: 50px;
+    appearance: none;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    margin: 5px;
+    transition: 0.4;
+    color: white;
+    font-size: 18px;
+    text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+}
+.paginas button.active{
+    background:#3282b8;
+    border-radius: 3px;
+    color: white;
+}
+.paginas button:hover{
+    background:#3282b8;
+    color: white;
+}
+.table-container .paginacion .paginas{
+    margin-left: auto;
+    margin-right:0;
+    width: 50%;
+}
+
+
+
+
