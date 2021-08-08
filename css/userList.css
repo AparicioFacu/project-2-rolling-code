@@ -1,6 +1,18 @@
+body{
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(2, 9, 11, 1) 0%,
+        rgba(22, 86, 110, 1) 50%,
+        rgba(2, 9, 11, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    
+}
+
 .table-container{
     border-radius: 3px;
-    background-color: #2a3338;
+    background-color: #171a21;
     margin: 0 auto;
     font-size: 14px;
     color: white;
@@ -14,13 +26,6 @@
     border-radius: 3px;
     border: solid 1px;
     color: white;
-}
-.table-container .paginacion{
-    padding: 12px;
-    align-items: baseline;
-}
-.table-container .paginacion .lista{
-    width: 50%;
 }
 .tablebody button{
     color: white;
@@ -52,18 +57,43 @@
     box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 .paginas button.active{
-    background:#3282b8;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(2, 9, 11, 1) 0%,
+        rgba(22, 86, 110, 1) 50%,
+        rgba(2, 9, 11, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
+    );
     border-radius: 3px;
     color: white;
 }
 .paginas button:hover{
-    background:#3282b8;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(2, 9, 11, 1) 0%,
+        rgba(22, 86, 110, 1) 50%,
+        rgba(2, 9, 11, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
+    );
     color: white;
 }
-.table-container .paginacion .paginas{
-    margin-left: auto;
-    margin-right:0;
-    width: 50%;
+
+.botonBuscar{
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(2, 9, 11, 1) 0%,
+        rgba(22, 86, 110, 1) 50%,
+        rgba(2, 9, 11, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    color: white;
+}
+
+.tituloModal{
+    color: rgba(22, 86, 110, 1);
 }
 
 

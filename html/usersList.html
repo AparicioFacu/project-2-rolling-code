@@ -39,7 +39,7 @@
               </div>
           </div>
       </nav>
-        <h1 class="text-center p-3">Usuarios Registrados</h1>
+        <h1 class="text-center text-white py-4">Usuarios Registrados</h1>
       </header>
     <section id="seccionTabla" class="container table-container">
       <form onsubmit="buscarUsuarios(event)">
@@ -49,7 +49,7 @@
             <input id="busquedaInput" type="text">
           </div>
           <div class="col-1">
-            <button type="submit" class="btn btn-info"><i class="fas fa-search"></i></button>
+            <button type="submit" class="btn botonBuscar"><i class="fas fa-search"></i></button>
           </div>                        
         </div>
       </form>
@@ -64,34 +64,64 @@
         <tbody class="tablebody">
         </tbody>
       </table>    
-      <div class="paginacion d-flex">
-        <div class="lista">
-          Show
-          <select onclick="mostrarUsuarioSelect()" name="" id="show">
-            <option value="2">2</option>
-            <option value="4" selected>4</option>
-            <option value="6">6</option>
-            <option value="8">8</option>
-            <option value="10">10</option>          
-          </select>
-        </div>
-        <div id="paginacionTabla" class="paginas"></div>     
+        <div id="paginacionTabla" class="py-3 paginas"></div>     
       </div> 
     </section>
     <br>  
-    
-    <footer class="py-5 bg-dark">
-      
+    <br> 
+    <br>  
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-12 d-flex justify-content-center justify-content-lg-start ">
+                  <div>                     
+                      <div class="icono">                
+                            <h2 class="titulo py-3">¡Siguenos!</h2>
+                            <a href="#" class="fab fa-facebook"></a>
+                            <a href="#" class="fab fa-instagram"></a>                           
+                            <a href="#" class="fab fa-discord "></a>
+                            <a href="#" class="fab fa-twitter "></a>                                                            
+                      </div>
+                      <p class="text-secondary text-center py-4">Tu compra está protegida</p>         
+                  </div>
+              </div>
+              <div class="col-lg-6 col-12">
+                  <div class="d-flex justify-content-around ">
+                      <ul class="py-2 list-unstyled lista ">
+                          <h3 class="titulo1 ">Comprar</h3>
+                          <li><a>Como Comprar</a></li>
+                          <li><a>Lista de juegos</a></li>
+                          <li><a>Colecciones</a></li>                         
+                      </ul>
+                      <ul class="py-2 list-unstyled lista ">
+                          <h3 class="titulo1 ">Ayuda</h3>
+                          <li><a>FAQ</a></li>
+                          <li><a>Como Activar el Juego</a></li>
+                          <li><a>Crear un ticket</a></li>                     
+                      </ul>                                          
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Copyright -->
+      <div class="d-flex bg">
+        <div class="col-11 text-center p-3 text-secondary">
+          © 2021 Copyright
+        </div>
+        <div class="col-1 text-center">
+          <a href="#" class="text-center p-2 volverArriba"><i class="fas fa-angle-up"></i></a>                                                                                                                           
+        </div>
+      </div>
     </footer>
     </main>
 
   <!-- modal Ver Detalle usuario -->
 
   <div class="modal fade" id="detalleModal" tabindex="-1" aria-labelledby="titulo" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-dark">
               <div class="modal-header">
-                  <h5 class="modal-title text-warning" id="titulo">Detalle de Usuario</h5>
+                  <h5 class="modal-title tituloModal" id="titulo">Detalle de Usuario</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div id="detalleUsuarioBody" class="modal-body bg-secondary">

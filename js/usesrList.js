@@ -6,43 +6,6 @@ const detalleUsuarioBody = document.getElementById('detalleUsuarioBody');
 
 let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-function mostrarUsuarios() {
-    function armarFilasDeUsuarios(usuario) {
-        const fila = `
-            <tr>
-                <td>${usuario.fullname}</td>
-                <td>${usuario.role}</td>
-                <td>
-                    <button onclick="detalleUsuario('${usuario.id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detalleModal" data-bs-whatever="@mdo"><i class="fas fa-info-circle"></i></button>
-                    <button onclick="eliminarUsuario('${usuario.id}')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                </td>
-            </tr>
-            `;
-        return fila;
-    }
-    const contenido = usuarios.map(armarFilasDeUsuarios);
-    tablebody.innerHTML = contenido.join('');
-}
-mostrarUsuarios();
-
-function mostrarUsuarioSelect() {
-let contenido = [];
-for (let i = 0; i < show.value; i++) {
-    const usuario = usuarios[i];
-    const fila = `
-        <tr>
-            <td>${usuario.fullname}</td>
-            <td>${usuario.role}</td>
-            <td>
-                <button onclick="detalleUsuario('${usuario.id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detalleModal" data-bs-whatever="@mdo"><i class="fas fa-info-circle"></i></button>
-                <button onclick="eliminarUsuario('${usuario.id}')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-            </td>
-        </tr>
-        `
-    contenido.push(fila);
-}
-tablebody.innerHTML = contenido.join('');
-}
 function eliminarUsuario(id) {
     function usuariosFilter(usuario) {
         return usuario.id !== id;
@@ -75,9 +38,8 @@ function buscarUsuarios(event) {
     }
     const usuarioFiltrado = usuariosAll.filter(filtrarUsuarios);
     usuarios = usuarioFiltrado;
-    mostrarUsuarios();
+    mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 }
-
 /** Paginacion*/
 let pagActual = 1;
 /**cantidad de filas a mostrar en la tabla */
