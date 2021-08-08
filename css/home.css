@@ -48,8 +48,7 @@ body {
 }
 /* Description */
 .game-description {
-    background-image: url(https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628264142/Video%20Games/fondo1_otmhqe.png);
-    border: ridge rgba(15, 74, 97, 1);
+  background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
     border-left: 0;
     margin: 5px 5px 5px 0px;
     box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
@@ -112,4 +111,41 @@ body {
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 50% 50%;
+}
+
+/* Section Cards */
+.card-game {
+    width: 350px;
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+    padding: 0;
+    margin: 0.5rem 1rem;
+}
+
+
+.card-description {
+    background-image: repeating-linear-gradient(135deg, rgb(13,120,167) 0px, rgb(13,120,167) 2px,rgb(14,121,168) 2px, rgb(14,121,168) 4px,rgb(15,122,169) 4px, rgb(15,122,169) 6px,rgb(14,121,168) 6px, rgb(14,121,168) 8px,rgb(17,124,171) 8px, rgb(17,124,171) 10px,rgb(16,123,170) 10px, rgb(16,123,170) 12px,rgb(14,121,168) 12px, rgb(14,121,168) 14px,rgb(13,120,167) 14px, rgb(13,120,167) 16px,rgb(17,124,171) 16px, rgb(17,124,171) 18px,rgb(15,122,169) 18px, rgb(15,122,169) 20px,rgb(16,123,170) 20px, rgb(16,123,170) 22px,rgb(16,123,170) 22px, rgb(16,123,170) 24px);
+ 
+}
+.card-oferta{
+    background-color: rgba(80, 167, 80, 0.644);
+    text-align: center;
+    font-size: 2rem
+}
+
+.card-precio {
+    background-color: rgba(21, 33, 49, 0.582);
+    padding: 0rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-precio span s {
+    font-size: 1rem;
+    color: rgb(150, 150, 150);
+}
+.card-precio span{
+    font-size: 1.5rem;
+    color: rgb(0, 225, 255);
+
+
 }
