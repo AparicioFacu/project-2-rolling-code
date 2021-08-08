@@ -1,51 +1,51 @@
 const contenedorCards = document.getElementById('contenedor-cards')
 //Necesito crear un array de productos que me permita simular lo del localStorage
-const productosHarcodeados = [
-    {
-        id: '1',
-        titulo: 'Fifa',
-        descripcion: 'El mejor video game de futbol ever',
-        precio: '150',
-        url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
-    },
-    {
-        id: '2',
-        titulo: 'Counter Strike',
-        descripcion: 'No campees fule!',
-        precio: '200',
-        url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
-    },
-    {
-        id: '3',
-        titulo: 'Mario Bros',
-        descripcion: 'Juego de aventura',
-        precio: '120',
-        url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
-    },
-    {
-        id: '4',
-        titulo: 'Guitar Hero',
-        descripcion: 'Tas listo pa rockear?',
-        precio: '180',
-        url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
-    },
-    {
-        id: '5',
-        titulo: 'call of duty',
-        descripcion: 'El mejor juego de guerra ever',
-        precio: '250',
-        url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
-    },
-    {
-        id: '6',
-        titulo: 'GTA',
-        descripcion: 'El juego mas vendido de la historia',
-        precio: '350',
-        url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
-    }
-]
-//para simular que verdaderamente viene de local storage pusheamos y luego traemos
-localStorage.setItem('productos', JSON.stringify(productosHarcodeados))
+// const productosHarcodeados = [
+//     {
+//         id: '1',
+//         titulo: 'Fifa',
+//         descripcion: 'El mejor video game de futbol ever',
+//         precio: '150',
+//         url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
+//     },
+//     {
+//         id: '2',
+//         titulo: 'Counter Strike',
+//         descripcion: 'No campees fule!',
+//         precio: '200',
+//         url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
+//     },
+//     {
+//         id: '3',
+//         titulo: 'Mario Bros',
+//         descripcion: 'Juego de aventura',
+//         precio: '120',
+//         url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
+//     },
+//     {
+//         id: '4',
+//         titulo: 'Guitar Hero',
+//         descripcion: 'Tas listo pa rockear?',
+//         precio: '180',
+//         url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
+//     },
+//     {
+//         id: '5',
+//         titulo: 'call of duty',
+//         descripcion: 'El mejor juego de guerra ever',
+//         precio: '250',
+//         url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
+//     },
+//     {
+//         id: '6',
+//         titulo: 'GTA',
+//         descripcion: 'El juego mas vendido de la historia',
+//         precio: '350',
+//         url: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
+//     }
+// ]
+// //para simular que verdaderamente viene de local storage pusheamos y luego traemos
+// localStorage.setItem('productos', JSON.stringify(productosHarcodeados))
 const productosJSON = localStorage.getItem('productos');
 let productos = JSON.parse(productosJSON) || [];//Estoy tomando estos productos de LS
 
