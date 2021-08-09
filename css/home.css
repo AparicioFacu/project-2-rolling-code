@@ -18,7 +18,7 @@ body {
 /* CAROUSEL CONTAINER*/
 /* image */
 .game-image {
-    background-image: url(https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628178941/Video%20Games/pugb1_kwch2r.jpg);
+  
     position: relative;
     min-width: 300px;
     min-height: 200px;
