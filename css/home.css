@@ -112,7 +112,17 @@ body {
     background-position: 50%;
     background-size: 50% 50%;
 }
-
+.carousel-indicators-game {
+    position: absolute;
+    bottom: -40px !important;
+  
+}
+.carousel-indicators-game [data-bs-target] {
+    height: 10px !important;
+    width: 20px !important;
+    border: 1px;
+    border-radius: 3px;
+}
 /* Section Cards */
 .card-game {
     width: 350px;
@@ -146,6 +156,6 @@ body {
 .card-precio span{
     font-size: 1.5rem;
     color: rgb(0, 225, 255);
-
-
 }
+
+
