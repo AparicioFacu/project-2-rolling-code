@@ -14,14 +14,10 @@ const newGamesHarcodeados = [
     src2: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628382791/Video%20Games/wallpapersden.com_dragon-ball-z-kakarot-game-poster_1920x1080_trerme.jpg",
     categoria1: "Acción",
     categoria2: "Anime",
-    compatibilidad1: '<i class="fab fa-windows me-2">',
-    compatibilidad2: '<i class="fab fa-apple"></i>',
     //datos para cards
     src: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg",
     fechaLimite: "19/8/21",
-    descuento: "-50%",
-    nuevoPrecio: "750.00",
-    active: "active",
+    descuento: 50,
   },
   {
     //datos para usuario
@@ -34,14 +30,10 @@ const newGamesHarcodeados = [
     src2: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628179322/Video%20Games/pugb3_icejl5.jpg",
     categoria1: "Acción",
     categoria2: "Cooperativo",
-    compatibilidad1: '<i class="fab fa-windows me-2">',
-    compatibilidad2: '<i class="fab fa-apple"></i>',
     //datos para cards
     src: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628534013/Video%20Games/pugb-card_kr0rfo.jpg",
     fechaLimite: "19/8/21",
-    descuento: "-30%",
-    nuevoPrecio: "350.00",
-    active: " ",
+    descuento: 30,
   },
   {
     //datos para usuario
@@ -54,14 +46,10 @@ const newGamesHarcodeados = [
     src2: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628179322/Video%20Games/pugb3_icejl5.jpg",
     categoria1: "Acción",
     categoria3: "Futuro",
-    compatibilidad1: '<i class="fab fa-windows me-2">',
-    compatibilidad2: '<i class="fab fa-apple"></i>',
     //datos para cards
     src: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628534013/Video%20Games/pugb-card_kr0rfo.jpg",
     fechaLimite: "19/8/21",
-    descuento: "-30%",
-    nuevoPrecio: "350.00",
-    active: " ",
+    descuento: 30,
   },
 ];
 
@@ -94,18 +82,20 @@ function mostrarCardsGames() {
               </div>
               <div class="m-0 row  ">
                   <div class="col-3 card-oferta d-flex justify-content-center align-items-center">
-                      <span>${game.descuento}</span>
+                      <span>-${game.descuento}%</span>
                   </div>
                   <div class="col-9 card-precio">
                       <span><s>ARS$ ${game.precio}</s></span>
-                      <span><i>ARS$ ${game.nuevoPrecio}</i></span>
+                      <span><i>ARS$ ${
+                        game.precio - (game.descuento * game.precio) / 100
+                      }</i></span>
                   </div>
               </div>
           </div>
       </div>
        `;
   });
-  console.log(contenido.join(""));
+
   const allHtmlcontent = contenido.join("");
   gamesCards.innerHTML = allHtmlcontent;
 }
@@ -117,68 +107,122 @@ mostrarCardsGames();
 
 // funcion que me renderice el contenido del carousel
 function mostrarCarouselGames() {
-  const contenido = games.map((game) => {
+  const contenido = games.map((game, index) => {
     // console.log(usuario.id);
-    return ` 
-    <div class="carousel-item ${game.active}">
-        <div class="row justify-content-center">
-            <div id="main-image" class="col-10 col-md-8 game-image"
-                data-default-image="${game.url}" >
-                <button class="btn-buy"><b>BUY NOW</b></button>
-            </div>
-            <div class="d-md-flex col-10 col-md-3 game-description row">
-                <div class="mt-2 col-12">
-                    <h1>${game.titulo}</h1>
-                </div>
-                <div class="d-none col-5 d-md-flex col-md-12 flex-md-column">
-                    <img id="image-1"
-                        src="${game.src1}"
-                        alt="img1">
-                    <img id="image-2"
-                        src="${game.src2}"
-                        alt="img2">
-                </div>
-                <div class="d-none d-md-flex">
-                    <h4>Ya disponible</h4>
-                </div>
-                <div class="flex-wrap d-md-flex mt-1">
-                    <span>${game.categoria1}</span>
-                    <span>${game.categoria2}</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p><i>ARS$ ${game.precio}</i></p>
-                    <h5><i class="fab fa-apple me-2"></i><i class="fab fa-windows"></i></h5>
-                </div>
-            </div>
-        </div> 
-   </div>
-       `;
-       
+    if (index === 0) {
+      return ` 
+      <div class="carousel-item active">
+          <div class="row justify-content-center">
+              <div id="main-image-${game.id}" class="col-10 col-md-8 game-image"
+                  data-default-image="${game.url}" >
+                  <button class="btn-buy"><b>BUY NOW</b></button>
+              </div>
+              <div class="d-md-flex col-10 col-md-3 game-description row">
+                  <div class="mt-2 col-12">
+                      <h1>${game.titulo}</h1>
+                  </div>
+                  <div class="d-none col-5 d-md-flex col-md-12 flex-md-column">
+                      <img id="image-1-${game.id}"
+                          src="${game.src1}"
+                          alt="img1">
+                      <img id="image-2-${game.id}"
+                          src="${game.src2}"
+                          alt="img2">
+                  </div>
+                  <div class="d-none d-md-flex">
+                      <h4>Ya disponible</h4>
+                  </div>
+                  <div class="flex-wrap d-md-flex mt-1">
+                      <span>${game.categoria1}</span>
+                      <span>${game.categoria2}</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                      <p><i>ARS$ ${game.precio}</i></p>
+                      <h5><i class="fab fa-apple me-2"></i><i class="fab fa-windows"></i></h5>
+                  </div>
+              </div>
+          </div> 
+     </div>
+         `;
+    } else {
+      return ` 
+      <div class="carousel-item ">
+          <div class="row justify-content-center">
+              <div id="main-image-${game.id}" class="col-10 col-md-8 game-image"
+                  data-default-image="${game.url}" >
+                  <button class="btn-buy"><b>BUY NOW</b></button>
+              </div>
+              <div class="d-md-flex col-10 col-md-3 game-description row">
+                  <div class="mt-2 col-12">
+                      <h1>${game.titulo}</h1>
+                  </div>
+                  <div class="d-none col-5 d-md-flex col-md-12 flex-md-column">
+                      <img id="image-1-${game.id}"
+                          src="${game.src1}"
+                          alt="img1">
+                      <img id="image-2-${game.id}"
+                          src="${game.src2}"
+                          alt="img2">
+                  </div>
+                  <div class="d-none d-md-flex">
+                      <h4>Ya disponible</h4>
+                  </div>
+                  <div class="flex-wrap d-md-flex mt-1">
+                      <span>${game.categoria1}</span>
+                      <span>${game.categoria2}</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                      <p><i>ARS$ ${game.precio}</i></p>
+                      <h5><i class="fab fa-apple me-2"></i><i class="fab fa-windows"></i></h5>
+                  </div>
+              </div>
+          </div> 
+     </div>
+         `;
+    }
   });
-  console.log(contenido.join(""));
   const allHtmlcontent = contenido.join("");
   gamesCarousel.innerHTML = allHtmlcontent;
 }
 mostrarCarouselGames();
-// Funcion para cambiar imagen con hover y  establecer imagen de fondo 
+// Funcion para cambiar imagen con hover y  establecer imagen de fondo
 //ME FALTA HACER QUE ESTA FUNCION GIRE POR TODOS LOS ELEMNTOS DEL ARRAY Y NO SOLO FUNCIONE CON EL PRIMERO.
 function cambiarImagen() {
-  const mainImage = document.getElementById("main-image");
-  const image1 = document.getElementById("image-1");
-  const image2 = document.getElementById("image-2");
-
-  mainImage.style.backgroundImage = `url(${mainImage.dataset.defaultImage})`;
-  image1.addEventListener("mouseover", () => {
-    mainImage.style.backgroundImage = `url(${image1.src})`;
-  });
-  image1.addEventListener("mouseleave", () => {
+  // let imagenes = [];
+  // for (let i = 0; i < 3; i++) {
+  //   imagenes[i] = (document.getElementById(`main-image-${i+1}`));
+  // }
+  // let imagenesHover = [];
+  // for (let i = 0; i < (3); i++) {
+  //   // console.log(i);
+  //   for (let j = 0; j < (2) ; j++) {
+  //     // console.log(j);
+  //     imagenesHover.push(document.getElementById(`image-${j+1}-${i+1}`))
+  //   }
+  // }
+  // console.log(imagenesHover);
+  // console.log(imagenes);
+  // for (let i = 0; i < imagenes.length; i++) {
+  //   imagenes[i].style.backgroundImage = `url(${imagenes[i].dataset.defaultImage})`;
+  //   console.log("soy imagenes main", imagenes[i])
+  // }
+  const imagenes = games.map((game) => {
+    const mainImage = document.getElementById(`main-image-${game.id}`);
+    const image1 = document.getElementById(`image-1-${game.id}`);
+    const image2 = document.getElementById(`image-2-${game.id}`);
     mainImage.style.backgroundImage = `url(${mainImage.dataset.defaultImage})`;
-  });
-  image2.addEventListener("mouseover", () => {
-    mainImage.style.backgroundImage = `url(${image2.src})`;
-  });
-  image2.addEventListener("mouseleave", () => {
-    mainImage.style.backgroundImage = `url(${mainImage.dataset.defaultImage})`;
+    image1.addEventListener("mouseover", () => {
+      mainImage.style.backgroundImage = `url(${image1.src})`;
+    });
+    image1.addEventListener("mouseleave", () => {
+      mainImage.style.backgroundImage = `url(${mainImage.dataset.defaultImage})`;
+    });
+    image2.addEventListener("mouseover", () => {
+      mainImage.style.backgroundImage = `url(${image2.src})`;
+    });
+    image2.addEventListener("mouseleave", () => {
+      mainImage.style.backgroundImage = `url(${mainImage.dataset.defaultImage})`;
+    });
   });
 }
 cambiarImagen();
