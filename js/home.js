@@ -38,18 +38,18 @@ const newGamesHarcodeados = [
   {
     //datos para usuario
     id: "3",
-    titulo: "AAAAAA",
-    precio: "500.00",
-    url: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628178941/Video%20Games/pugb1_kwch2r.jpg",
+    titulo: "Mortal Kombat",
+    precio: "2000.00",
+    url: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628620290/Video%20Games/mortalkombat/mortalkombaturl_1_kjuf4z.jpg",
     // datos para carrusel
-    src1: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628178948/Video%20Games/pugb2_wm9cuj.jpg",
-    src2: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628179322/Video%20Games/pugb3_icejl5.jpg",
+    src1: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628620364/Video%20Games/mortalkombat/mortalkombatSRC1_pe7qit.jpg",
+    src2: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628620241/Video%20Games/mortalkombat/mortalkombatSRC2_dhmn0w.jpg",
     categoria1: "Acción",
-    categoria3: "Futuro",
+    categoria2: "Versus",
     //datos para cards
-    src: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628534013/Video%20Games/pugb-card_kr0rfo.jpg",
+    src: "https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628619786/Video%20Games/mortalkombat/mortalkombat_cv9q5s.jpg",
     fechaLimite: "19/8/21",
-    descuento: 30,
+    descuento: 5,
   },
 ];
 
@@ -70,7 +70,7 @@ function mostrarCardsGames() {
     <div class="card-game">
           <div>
               <img src="${game.src}"
-                  class="card-img-top" alt="game-img">
+                  class="card-img-top card-image" alt="game-img">
           </div>
           <div class="card-description">
               <div class="d-flex flex-column  mx-2 py-2 ">
@@ -95,7 +95,6 @@ function mostrarCardsGames() {
       </div>
        `;
   });
-
   const allHtmlcontent = contenido.join("");
   gamesCards.innerHTML = allHtmlcontent;
 }
