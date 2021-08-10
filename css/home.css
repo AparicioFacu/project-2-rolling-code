@@ -34,8 +34,8 @@ body {
 /* Button BUYNOW */
 .game-image button{
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 5%;
+    right: 5%;
 
 }
 .btn-buy{
@@ -45,7 +45,7 @@ body {
     text-align: center;
     border: 2px outset rgba(13, 120, 167, 1);
 }
-.game-image button:hover {
+.btn-buy:hover {
     filter: brightness(120%);
     box-shadow: 0px 0px 2px 1px rgb(19, 97, 128);
 }
@@ -133,8 +133,9 @@ body {
     padding: 0;
     margin: 0.5rem 1rem;
 }
-
-
+.card-image {
+    height: 380px;
+}
 .card-description {
     background-image: repeating-linear-gradient(135deg, rgb(13,120,167) 0px, rgb(13,120,167) 2px,rgb(14,121,168) 2px, rgb(14,121,168) 4px,rgb(15,122,169) 4px, rgb(15,122,169) 6px,rgb(14,121,168) 6px, rgb(14,121,168) 8px,rgb(17,124,171) 8px, rgb(17,124,171) 10px,rgb(16,123,170) 10px, rgb(16,123,170) 12px,rgb(14,121,168) 12px, rgb(14,121,168) 14px,rgb(13,120,167) 14px, rgb(13,120,167) 16px,rgb(17,124,171) 16px, rgb(17,124,171) 18px,rgb(15,122,169) 18px, rgb(15,122,169) 20px,rgb(16,123,170) 20px, rgb(16,123,170) 22px,rgb(16,123,170) 22px, rgb(16,123,170) 24px);
  
