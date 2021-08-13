@@ -24,7 +24,7 @@ function create_UUID() {
     return uuid;
 }
 
-const productosJSON = localStorage.getItem('productos');
+const productosJSON = localStorage.getItem('games');
 let productos = JSON.parse(productosJSON) || [];
 
 //Guarda el producto en local storage
@@ -63,7 +63,8 @@ const createNewProduct = (event) => {
         descuento
     }
     console.log(nuevoProducto);
-
+    productos.push(nuevoProducto);
+    localStorage.setItem('games', JSON.stringify(productos));
     //limpiar formulario
     limpiarFormulario();
     //Mostrar elmsj de producto creado exitosamente
