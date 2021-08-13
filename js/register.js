@@ -18,43 +18,52 @@ let usuarios = JSON.parse(usuariosJSON) || [];
 const signUpUsuario  = (event) => {
     event.preventDefault();
     console.log("te estas logueando");
-    //tomamos los datos ingresados por el user
-    const newUser = {
-        id: create_UUID(),
-        email: emailInput.value,
-        pass: passInput.value,
-        fullname: nameInput.value,
-        role: 'basic'
-    }
-    console.log(newUser)
-    //Verificamos que no sea un email repetido
-    let invalidEmail = false;
-    usuarios.forEach(user => {
-        if(user.email === newUser.email){
-            invalidEmail=true;
-        }
-    });
-    if(invalidEmail){
-        //Esta usando un email que ya se registro ingrese otro 
-        console.log("usuario no valido");
-        msjError.innerHTML="Este email ya se registró"
+    //Validamos que al menos todos los campos esten presentes
+    if(emailInput.value ==="" || passInput.value==="" || nameInput.value===""){
+        console.log("todos los campos son requeridos");
+        msjError.innerHTML="Todos los campos son requeridos"
         msjError.setAttribute('class', 'alert alert-danger');
         setTimeout(()=>{
             msjError.setAttribute('class', 'd-none')
         }, 1500);
     }else{
-        //Es un email valido debemos proseguir
-        console.log("registrado correctamente");
-        msjError.innerHTML="Registro exitoso"
-        msjError.setAttribute('class', 'alert alert-success');
-        setTimeout(()=>{
-            msjError.setAttribute('class', 'd-none')
-            //Redireccionamos a la pagina de administrador
-            window.location.href = "../index.html";
-        }, 1500);
-        usuarios.push(newUser);
-        const usuarioJSON = JSON.stringify(usuarios);
-        localStorage.setItem('usuarios', usuarioJSON)
+        //tomamos los datos ingresados por el user
+        const newUser = {
+            id: create_UUID(),
+            email: emailInput.value,
+            pass: passInput.value,
+            fullname: nameInput.value,
+            role: 'basic'
+        }
+        console.log(newUser)
+        //Verificamos que no sea un email repetido
+        let invalidEmail = false;
+        usuarios.forEach(user => {
+            if(user.email === newUser.email){
+                invalidEmail=true;
+            }
+        });
+        if(invalidEmail){
+            //Esta usando un email que ya se registro ingrese otro 
+            console.log("usuario no valido");
+            msjError.innerHTML="Este email ya se registró"
+            msjError.setAttribute('class', 'alert alert-danger');
+            setTimeout(()=>{
+                msjError.setAttribute('class', 'd-none')
+            }, 1500);
+        }else{
+            //Es un email valido debemos proseguir
+            console.log("registrado correctamente");
+            msjError.innerHTML="Registro exitoso"
+            msjError.setAttribute('class', 'alert alert-success');
+            setTimeout(()=>{
+                msjError.setAttribute('class', 'd-none')
+                //Redireccionamos a la pagina de administrador
+                window.location.href = "../home.html";
+            }, 1500);
+            usuarios.push(newUser);
+            const usuarioJSON = JSON.stringify(usuarios);
+            localStorage.setItem('usuarios', usuarioJSON)
+            }   
     }
-    
 }

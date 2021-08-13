@@ -2,6 +2,24 @@
 const emailInput = document.getElementById('email');
 const passInput = document.getElementById('pass');
 const msjError = document.getElementById('msj-error-login');
+//Crearemos un par de usuarios que estaran harcodeados para que la persona que testee no tenga que registrarse
+const administradoresHarcodeados = [
+    {
+        email: "santi@gmail.com",
+        fullname: "Santiago Romano",
+        id: "1709cd68-9450-4ebb-86e8-b407f4012e6d",
+        pass: "santi45",
+        role: "admin",
+    },
+    {
+        email: "romanomatias99@gmail.com",
+        fullname: "Matias Romano",
+        id: "1c9ab0d0-2ea1-46af-8c9b-3713153f5074",
+        pass: "romanomatias99",
+        role: "basic",
+    },
+]
+localStorage.setItem('usuarios', JSON.stringify(administradoresHarcodeados))
 //Traemos a todos los usuarios ya guardados en DB
 const usuariosJSON = localStorage.getItem('usuarios');
 let usuarios = JSON.parse(usuariosJSON) || [];
