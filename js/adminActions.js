@@ -3,6 +3,15 @@ const btnNewProduct = document.getElementById('new-product-btn');
 const btnListsProducts = document.getElementById('list-products-btn');
 const mostrarFormNuevoProducto = () => {
     console.log('Abrir form de nuevo producto');
+    const inputImage = document.getElementById('imgInp')
+    inputImage.addEventListener("change", function() {
+        console.log(this);
+        const reader = new FileReader();
+        reader.addEventListener("load", ()=>{
+            localStorage.setItem("recent-image", reader.result)
+        })
+        reader.readAsDataURL(this.files[0]);
+    })
 }
 //Funcion que nos traslada al html que muestra la lista de productos
 const listarTodosLosProductos = () => {
@@ -24,6 +33,7 @@ function create_UUID() {
     return uuid;
 }
 
+//Traemos todos los productos si es que los hay de local storage y si no creamos una array vacio
 const productosJSON = localStorage.getItem('productos');
 let productos = JSON.parse(productosJSON) || [];
 
@@ -37,33 +47,23 @@ const createNewProduct = (event) => {
     event.preventDefault();
     console.log("submit new product");
     const titulo = document.getElementById('titulo').value;
+    const descripcion = document.getElementById('descripcion').value;
     const precio = document.getElementById('precio').value;
-    const url = document.getElementById('url').value;
-    const src = document.getElementById('src').value;
-    const src1 = document.getElementById('src1').value;
-    const src2 = document.getElementById('src2').value;
-    const categoria1 = document.getElementById('categoria1').value;
-    const categoria2 = document.getElementById('categoria2').value;
-    const fechaLimite = document.getElementById('fecha-limite').value;
-    const descuento = document.getElementById('descuento').value;
+    url = localStorage.getItem("recent-image");
     // guardarProducto()
     //Evento que maneja la suba de archivos
 
     const nuevoProducto = {
         id: create_UUID(),
         titulo,
+        descripcion,
         precio,
         url,
-        src,
-        src1,
-        src2, 
-        categoria1,
-        categoria2,
-        fechaLimite, 
-        descuento
     }
     console.log(nuevoProducto);
-
+    productos.push(nuevoProducto);//Metemos dentro del array producto el nuevo producto;
+    //debemos actualizar la base de datos
+    localStorage.setItem('productos', JSON.stringify(productos))
     //limpiar formulario
     limpiarFormulario();
     //Mostrar elmsj de producto creado exitosamente
@@ -80,14 +80,8 @@ const createNewProduct = (event) => {
 
 const limpiarFormulario = () => {
     document.getElementById('titulo').value = "";
+    document.getElementById('descripcion').value = "";
     document.getElementById('precio').value = "";
-    document.getElementById('url').value = "";
-    document.getElementById('src').value = "";
-    document.getElementById('src1').value = "";
-    document.getElementById('src2').value = "";
-    document.getElementById('categoria1').value = "";
-    document.getElementById('categoria2').value = "";
-    document.getElementById('fecha-limite').value = "";
-    document.getElementById('descuento').value = "";
+    document.getElementById('imgInp').value = null;
 }
 

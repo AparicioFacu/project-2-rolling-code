@@ -55,10 +55,11 @@ console.log(productos)
 function mostrarProductosAdmin() {
     const contenido = productos.map(producto => {
         // console.log(usuario.id);
+        console.log(producto.url);
         return `<div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                         <img class="card-img-top" src=${producto.url} alt="..." />
+                         <img class="card-img-top" src="../html/${producto.url}" alt="..." />
                          <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">

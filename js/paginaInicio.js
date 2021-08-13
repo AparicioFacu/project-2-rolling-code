@@ -30,10 +30,10 @@ const loginUsuario  = (event) => {
     if(validUser){
         if(userTryingLoggin.role === 'admin'){
             //Muestro directamente pantalla de administrador
-            window.location.href = "../html/admin.html";
+            window.location.href = "./html/admin.html";
         }else{
             //Muestro pantalla de usuario basico
-            window.location.href = "../index.html";
+            window.location.href = "./home.html";
         }
     }else{
         console.log("mostrar mensaje al usuario - credenciales no validas");
