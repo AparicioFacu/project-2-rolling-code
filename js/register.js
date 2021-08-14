@@ -56,6 +56,7 @@ const signUpUsuario  = (event) => {
             console.log("registrado correctamente");
             msjError.innerHTML="Registro exitoso"
             msjError.setAttribute('class', 'alert alert-success');
+            limpiarFormularioRegistro();
             setTimeout(()=>{
                 msjError.setAttribute('class', 'd-none')
                 //Redireccionamos a la pagina de administrador
@@ -66,4 +67,10 @@ const signUpUsuario  = (event) => {
             localStorage.setItem('usuarios', usuarioJSON)
             }   
     }
+}
+
+const limpiarFormularioRegistro = () => {
+    emailInput.value = "";
+    passInput.value = "";
+    nameInput.value = "";
 }

@@ -1,6 +1,7 @@
 // elementos del html
 const btnNewProduct = document.getElementById('new-product-btn');
 const btnListsProducts = document.getElementById('list-products-btn');
+const btnListsUsers = document.getElementById('list-users-btn');
 const mostrarFormNuevoProducto = () => {
     console.log('Abrir form de nuevo producto');
 }
@@ -10,8 +11,14 @@ const listarTodosLosProductos = () => {
     window.location.href = "../html/productList.html";
 }
 
+const listarTodosLosUsuarios = () => {
+    console.log("Listar los productos");
+    window.location.href = "../html/usersList.html";
+}
+
 btnNewProduct.addEventListener('click', mostrarFormNuevoProducto)
 btnListsProducts.addEventListener('click', listarTodosLosProductos)
+btnListsUsers.addEventListener('click', listarTodosLosUsuarios)
 
 //Funcion que genera un id unico para cada elemento
 function create_UUID() {
