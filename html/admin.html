@@ -88,6 +88,10 @@
                     <p class="text-center">List all products</p>
                     <div id="list-products-btn" class="new-product-container"><i class="fas fa-list-ul"></i></div>
                 </div>
+                <div class="col mx-2 mb-5 option-styles-container">
+                    <p class="text-center">List all users</p>
+                    <div id="list-users-btn" class="new-product-container"><i class="fas fa-list-ul"></i></div>
+                </div>
             </div>
         </div>
     </section>
@@ -119,16 +123,40 @@
                         <label for="titulo">Titulo</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input id="descripcion" type="text" class="form-control" placeholder="descripcion del producto"
-                            required>
-                        <label for="descripcion">Descripción</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input id="precio" type="text" class="form-control" placeholder="precio del producto" required>
+                        <input id="precio" type="number" class="form-control" placeholder="precio del producto" required>
                         <label for="precio">Precio</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input accept="image/*" type='file' id="imgInp" />
+                        <input id="url" type="text" class="form-control" placeholder="http://imagen..." required>
+                        <label for="url">Imagen 1</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="src" type="text" class="form-control" placeholder="http://imagen..." required>
+                        <label for="src">Imagen 2</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="src1" type="text" class="form-control" placeholder="http://imagen..." required>
+                        <label for="src1">Imagen 3</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="src2" type="text" class="form-control" placeholder="http://imagen..." required>
+                        <label for="src2">Imagen 4</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="categoria1" type="text" class="form-control" placeholder="Ej: anime" required>
+                        <label for="categoria1">Categoria 1</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="categoria2" type="text" class="form-control" placeholder="Ej: accion" required>
+                        <label for="categoria2">Categoria 2</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="fecha-limite" type="date" class="form-control" placeholder="Ej: 19/10/2020" required>
+                        <label for="fecha-limite">Fecha limite promocion</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="descuento" type="number" class="form-control" placeholder="Ej: 30%" required>
+                        <label for="descuento">Descuento</label>
                     </div>
                 </div>
                 <div class="modal-footer">
