@@ -1,0 +1,63 @@
+body{
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(2, 9, 11, 1) 0%,
+        rgba(22, 86, 110, 1) 50%,
+        rgba(2, 9, 11, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.backgroundForm{
+    border: solid;
+    border-radius: 20px;
+    padding: 20px;   
+    box-shadow: 0px 0px 5px 1px #171a21;
+    transition: 1000ms linear;
+    width: 420px;
+}
+.btnRegister{
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(2, 9, 11, 1) 0%,
+        rgba(22, 86, 110, 1) 50%,
+        rgba(2, 9, 11, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    color: white;
+}
+.icono{
+    padding-top: 20px;
+    font-size: 70px;
+    color: white;
+}
+.register{
+    box-shadow: 0px 0px 5px 1px #171a21;
+    padding: 10px;
+}
+.register a{
+    text-decoration: none;
+    color: black;
+}
+.register a:hover{
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 2px;
+}
+.contraceña{
+    text-decoration: none;
+    color: white;
+}
+.contraceña:hover{
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 2px;
+}

@@ -95,7 +95,15 @@ body{
 .tituloModal{
     color: rgba(22, 86, 110, 1);
 }
-
+.icono{
+    font-size: 80px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    color: white;
+}
+.titulo{
+    padding-bottom: 20px;
+}
 
 
 

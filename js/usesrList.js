@@ -14,7 +14,7 @@ function eliminarUsuario(id) {
     usuarios = usuariosFiltrados;
     const notaJson = JSON.stringify(usuarios);
     localStorage.setItem('usuarios', notaJson);
-    mostrarUsuarioSelect();
+    mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 }
 function detalleUsuario(id){
     function usuarioFind(usuario) {
