@@ -40,7 +40,7 @@ function buscarUsuarios(event) {
     usuarios = usuarioFiltrado;
     mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 }
-/** Paginacion*/
+/** Paginacion */
 let pagActual = 1;
 /**cantidad de filas a mostrar en la tabla */
 let cantidadElement = 4;
