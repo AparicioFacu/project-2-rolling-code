@@ -184,27 +184,9 @@ function mostrarCarouselGames() {
   gamesCarousel.innerHTML = allHtmlcontent;
 }
 mostrarCarouselGames();
+
 // Funcion para cambiar imagen con hover y  establecer imagen de fondo
-//ME FALTA HACER QUE ESTA FUNCION GIRE POR TODOS LOS ELEMNTOS DEL ARRAY Y NO SOLO FUNCIONE CON EL PRIMERO.
 function cambiarImagen() {
-  // let imagenes = [];
-  // for (let i = 0; i < 3; i++) {
-  //   imagenes[i] = (document.getElementById(`main-image-${i+1}`));
-  // }
-  // let imagenesHover = [];
-  // for (let i = 0; i < (3); i++) {
-  //   // console.log(i);
-  //   for (let j = 0; j < (2) ; j++) {
-  //     // console.log(j);
-  //     imagenesHover.push(document.getElementById(`image-${j+1}-${i+1}`))
-  //   }
-  // }
-  // console.log(imagenesHover);
-  // console.log(imagenes);
-  // for (let i = 0; i < imagenes.length; i++) {
-  //   imagenes[i].style.backgroundImage = `url(${imagenes[i].dataset.defaultImage})`;
-  //   console.log("soy imagenes main", imagenes[i])
-  // }
   const imagenes = games.map((game) => {
     const mainImage = document.getElementById(`main-image-${game.id}`);
     const image1 = document.getElementById(`image-1-${game.id}`);

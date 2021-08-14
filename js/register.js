@@ -24,7 +24,7 @@ const signUpUsuario  = (event) => {
         email: emailInput.value,
         pass: passInput.value,
         fullname: nameInput.value,
-        role: 'basic'
+        role: 'admin'
     }
     console.log(newUser)
     //Verificamos que no sea un email repetido
@@ -50,7 +50,7 @@ const signUpUsuario  = (event) => {
         setTimeout(()=>{
             msjError.setAttribute('class', 'd-none')
             //Redireccionamos a la pagina de administrador
-            window.location.href = "../index.html";
+            window.location.href = "../home.html";
         }, 1500);
         usuarios.push(newUser);
         const usuarioJSON = JSON.stringify(usuarios);

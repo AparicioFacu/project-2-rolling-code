@@ -85,23 +85,56 @@
                 <h4>Destacados y Recomendados</h4>
                 <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
                     <div class="carousel-indicators carousel-indicators-game">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
                     </div>
                     <div id="games-carousel" class="carousel-inner">
-                      <!-- CONTENIDO CAROUSEL -->
-                      <!--  -->
+                        <!-- CONTENIDO CAROUSEL -->
+                        <!-- <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div id="main-image-${game.id}" class="col-12 col-md-8 game-image"
+                                    data-default-image="${game.url}">
+                                    <button class="btn-buy"><b>BUY NOW</b></button>
+                                </div>
+                                <div class="d-md-flex col-10 col-md-3 game-description row">
+                                    <div class="mt-2 col-12">
+                                        <h1>${game.titulo}</h1>
+                                    </div>
+                                    <div class="d-none col-5 d-md-flex col-md-12 flex-md-column">
+                                        <img id="image-1-${game.id}" src="${game.src1}" alt="img1">
+                                        <img id="image-2-${game.id}" src="${game.src2}" alt="img2">
+                                    </div>
+                                    <div class="d-none d-md-flex">
+                                        <h4>Ya disponible</h4>
+                                    </div>
+                                    <div class="flex-wrap d-md-flex mt-1">
+                                        <span>${game.categoria1}</span>
+                                        <span>${game.categoria2}</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p><i>ARS$ ${game.precio}</i></p>
+                                        <h5><i class="fab fa-apple me-2"></i><i class="fab fa-windows"></i></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!--  -->
                     </div>
-                    <button class="carousel-control-prev btn-carousel-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon  btn-carousel-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
+                    <button class="carousel-control-prev btn-carousel-prev" type="button"
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon  btn-carousel-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next btn-carousel-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                      <span class="carousel-control-next-icon  btn-carousel-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
+                    <button class="carousel-control-next btn-carousel-next" type="button"
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon  btn-carousel-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
                     </button>
-                  </div>
+                </div>
             </div>
         </section>
 
@@ -109,10 +142,10 @@
 
 
         <!-- Section Cards Ofertas Especiales -->
-        <section>
-            <h4>Ofertas Especiales</h4>
+        <section class="mt-5">
+            <!-- <h4>Ofertas Especiales</h4> -->
             <!-- Cards de Productos -->
-            <div id="games-cards" class="m-2 row justify-content-center ">
+            <div id="games-cards" class="my-5 d-flex justify-content-start justify-content-xl-center overflow-auto ">
                 <!-- <div class="card-game">
                     <div>
                         <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
@@ -139,6 +172,57 @@
                     </div>
                 </div> -->
             </div>
+            </div>
+        </section>
+        <!-- PRUEBA OWL CAROUSEL -->
+        <section class="my-5  row justify-content-center overflow-auto ">
+            <div class="card-game">
+                <div>
+                    <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
+                        class="card-img-top" alt="game-img">
+
+                </div>
+                <div class="card-description">
+                    <div class="d-flex flex-column justify-content-center align-items-start mx-2 py-2 ">
+                        <h3>Oferta del mes</h3>
+                        <div class="d-flex justify-content-between alingn-items-center">
+                            <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
+                            <button class="btn-buy">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-game">
+                <div>
+                    <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
+                        class="card-img-top" alt="game-img">
+
+                </div>
+                <div class="card-description">
+                    <div class="d-flex flex-column justify-content-center align-items-start mx-2 py-2 ">
+                        <h3>Oferta del mes</h3>
+                        <div class="d-flex justify-content-between alingn-items-center">
+                            <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
+                            <button class="btn-buy">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-game">
+                <div>
+                    <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
+                        class="card-img-top" alt="game-img">
+
+                </div>
+                <div class="card-description">
+                    <div class="d-flex flex-column justify-content-center align-items-start mx-2 py-2 ">
+                        <h3>Oferta del mes</h3>
+                        <div class="d-flex justify-content-between alingn-items-center">
+                            <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
+                            <button class="btn-buy">Buy now</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
