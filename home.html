@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <!-- Navigation-->
+    <!-- Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">Start Bootstrap</a>
@@ -53,10 +53,6 @@
                             <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item d-flex"><button type="button" class="btn-login-class" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
-                            Iniciar sesion
-                        </button></li>
                 </ul>
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">
@@ -89,8 +85,14 @@
                             class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                             aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                            aria-label="Slide 6"></button>
                     </div>
                     <div id="games-carousel" class="carousel-inner">
                         <!-- CONTENIDO CAROUSEL -->
@@ -143,89 +145,43 @@
 
         <!-- Section Cards Ofertas Especiales -->
         <section class="mt-5">
-            <!-- <h4>Ofertas Especiales</h4>  -->
+            <h4>Ofertas Especiales</h4> 
             <!-- Cards de Productos -->
-            <div id="games-cards" class="my-5 d-flex justify-content-start justify-content-xl-center overflow-auto ">
-                <!-- <div class="card-game">
-                    <div>
-                        <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
-                            class="card-img-top" alt="game-img">
-                        
-                    </div>
-                    <div class="card-description">
-                        <div class="d-flex flex-column justify-content-center align-items-start mx-2 py-2 ">
-                            <h3>Oferta del mes</h3>
-                            <div class="d-flex justify-content-between alingn-items-center">
-                                <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
-                                <button class="btn-buy">Buy now</button>
-                                </div>     
+            <div>
+                <div id="games-cards" class="my-5 d-flex justify-content-start justify-content-xl-center overflow-auto ">
+                    <!-- <div class="card-game">
+                        <div>
+                            <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
+                                class="card-img-top" alt="game-img">
+                            
                         </div>
-                        <div class="m-0 row  ">
-                            <div class="col-3 card-oferta d-flex justify-content-center align-items-center">
-                                <span>-50%</span>
+                        <div class="card-description">
+                            <div class="d-flex flex-column justify-content-center align-items-start mx-2 py-2 ">
+                                <h3>Oferta del mes</h3>
+                                <div class="d-flex justify-content-between alingn-items-center">
+                                    <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
+                                    <button class="btn-buy">Buy now</button>
+                                    </div>     
                             </div>
-                            <div class="col-9 card-precio">
-                                <span><s>ARS$ 1500.00</s></span>
-                                <span><i>ARS$ 750.00</i></span>
+                            <div class="m-0 row  ">
+                                <div class="col-3 card-oferta d-flex justify-content-center align-items-center">
+                                    <span>-50%</span>
+                                </div>
+                                <div class="col-9 card-precio">
+                                    <span><s>ARS$ 1500.00</s></span>
+                                    <span><i>ARS$ 750.00</i></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div> -->
+                    </div> -->
+                </div>
+                <div id="games-cards1" class="my-5 d-flex justify-content-start justify-content-xl-center overflow-auto ">
+                 
+                </div>
             </div>
-            </div>
+            
+            
         </section>
-        <!-- PRUEBA OWL CAROUSEL -->
-        <section class="my-5  row justify-content-center overflow-auto ">
-            <div class="card-game">
-                <div>
-                    <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
-                        class="card-img-top" alt="game-img">
-
-                </div>
-                <div class="card-description">
-                    <div class="d-flex flex-column justify-content-center align-items-start mx-2 py-2 ">
-                        <h3>Oferta del mes</h3>
-                        <div class="d-flex justify-content-between alingn-items-center">
-                            <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
-                            <button class="btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-game">
-                <div>
-                    <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
-                        class="card-img-top" alt="game-img">
-
-                </div>
-                <div class="card-description">
-                    <div class="d-flex flex-column justify-content-center align-items-start mx-2 py-2 ">
-                        <h3>Oferta del mes</h3>
-                        <div class="d-flex justify-content-between alingn-items-center">
-                            <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
-                            <button class="btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-game">
-                <div>
-                    <img src="https://res.cloudinary.com/dcx1rcwvu/image/upload/v1628380011/Video%20Games/spotlight_image_english_kivm2z.jpg"
-                        class="card-img-top" alt="game-img">
-
-                </div>
-                <div class="card-description">
-                    <div class="d-flex flex-column justify-content-center align-items-start mx-2 py-2 ">
-                        <h3>Oferta del mes</h3>
-                        <div class="d-flex justify-content-between alingn-items-center">
-                            <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
-                            <button class="btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <!-- Formulario para pedir datos -->
