@@ -1,0 +1,68 @@
+body{
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(2, 9, 11, 1) 0%,
+        rgba(22, 86, 110, 1) 50%,
+        rgba(2, 9, 11, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
+    );    
+}
+.user-login{
+    font-size: 25px;
+}
+.user-login a {
+  color: #858da8;
+}
+
+/* ESTILOS DE CARDS */
+
+  .option-styles  {
+    cursor: pointer;
+    font-size: 80px;
+    text-align: center;
+    background: #212529;
+    color: #858da8;
+    padding: 4vh;
+  }
+
+  .option-styles a{
+    text-decoration: none;
+    color: #858da8;
+  }
+
+  .option-styles p {
+   font-size: 25px;
+  }
+  
+/* Modal new product */
+
+.modal-newproduct{
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(2, 9, 11, 1) 0%,
+    rgba(22, 86, 110, 1) 50%,
+    rgba(2, 9, 11, 1) 100%,
+    rgba(0, 0, 0, 1) 100%
+); 
+ color: black;
+}
+.modal-newproduct-header{
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(2, 9, 11, 1) 0%,
+    rgba(22, 86, 110, 1) 50%,
+    rgba(2, 9, 11, 1) 100%,
+    rgba(0, 0, 0, 1) 100%
+); 
+ color: #858da8;
+}
+
+.modal-newproduct-header button {
+  color: #858da8;
+}
+.input-newproduct {
+  background-color: #858da8;
+}

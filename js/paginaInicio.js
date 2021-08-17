@@ -26,7 +26,7 @@ let usuarios = JSON.parse(usuariosJSON) || [];
 
 console.log(usuarios);
 
-const loginUsuario  = (event) => {
+const loginUsuario = (event) => {
     event.preventDefault();
     console.log("te estas logueando");
     //tomamos los datos ingresados por el user
@@ -38,27 +38,36 @@ const loginUsuario  = (event) => {
     //Verificamos que sea un usuario valido
     let validUser = false;
     usuarios.forEach(user => {
-        if(user.email === userTryingLoggin.email && user.pass === userTryingLoggin.pass){
+        if (user.email === userTryingLoggin.email && user.pass === userTryingLoggin.pass) {
             //Hubo coincidencia
             validUser = true;
             //Tomamos el role del usuario para poder luego elegir que pantalla mostrar
             userTryingLoggin.role = user.role;
         }
     });
-    if(validUser){
-        if(userTryingLoggin.role === 'admin'){
+    if (validUser) {
+        if (userTryingLoggin.role === 'admin') {
             //Muestro directamente pantalla de administrador
             window.location.href = "./html/admin.html";
-        }else{
+        } else {
             //Muestro pantalla de usuario basico
             window.location.href = "./home.html";
         }
-    }else{
+    } else {
         console.log("mostrar mensaje al usuario - credenciales no validas");
-        msjError.innerHTML="El email o password es incorrecto"
+        msjError.innerHTML = "El email o password es incorrecto"
         msjError.setAttribute('class', 'alert alert-danger');
-        setTimeout(()=>{
+        setTimeout(() => {
             msjError.setAttribute('class', 'd-none')
         }, 1500);
     }
+}
+
+// Intento de hacer el usuario logeado 
+
+function userLogged(){
+    var node = document.createElement("li");
+    var textnode = document.createTextNode("Water");
+    node.appendChild(textnode);
+    document.getElementById("userLog").appendChild(node);
 }
