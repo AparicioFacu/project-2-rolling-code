@@ -2,3 +2,43 @@ body {
     display: grid;
     grid-template-rows: 100px 1fr 100px;
 }
+
+.delete-update-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .background-btn-edit-delete {
+    background-color: #343a40;
+  }
+  
+  .icon-color {
+    color: rgba(22, 86, 110, 1) 50%;
+    border: none;
+  }
+  
+  .previsualizacion-img-container {
+    width: 50%;
+    height: 250px;
+  }
+  
+  .prev-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .green-background{
+    background: rgba(22, 86, 110, 1) 50%;
+  }
+  
+  .gray-font {
+    color: #343a40;
+  }
