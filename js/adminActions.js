@@ -85,7 +85,7 @@
 //     document.getElementById('imgInp').value = null;
 // }
 
-// JS de la NAVBAR ADMIN
+// JS de la BARRA LATERAL NAV
 
 const sidebar = document.querySelector(".sidebar");
   const botonCerrar = document.getElementById("btn");
