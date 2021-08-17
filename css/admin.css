@@ -66,3 +66,30 @@ body{
 .input-newproduct {
   background-color: #858da8;
 }
+
+/* Footer */
+
+.bg {
+  background-color: #0a0c0f;
+}
+.volverArriba{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border: solid grey;
+}
+.volverArriba i{
+  padding-top: 20px;
+  color: white;
+}
+.volverArriba:hover{
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(2, 9, 11, 1) 0%,
+      rgba(22, 86, 110, 1) 50%,
+      rgba(2, 9, 11, 1) 100%,
+      rgba(0, 0, 0, 1) 100%
+  );
+}
