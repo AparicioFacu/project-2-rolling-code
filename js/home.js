@@ -3,7 +3,7 @@ const gamesCards = document.getElementById("games-cards");
 const contenedorCards = document.getElementById("contenedor-cards");
 // elemento para carousel
 const gamesCarousel = document.getElementById("games-carousel");
-
+let gamesJSON = localStorage.getItem('games')
 let games = JSON.parse(gamesJSON) || [];
 //Estoy tomando estos games de LS
 console.log('Array de games :', games);
