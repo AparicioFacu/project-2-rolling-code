@@ -2,6 +2,18 @@
 const btnNewProduct = document.getElementById('new-product-btn');
 const btnListsProducts = document.getElementById('list-products-btn');
 const btnListsUsers = document.getElementById('list-users-btn');
+const nombreUsuarioLogueado = document.getElementById('nombre-usuario');
+
+
+const obtenerNombreUsuarioLogueado = () => {
+    const usuarioLogueadoJSON = localStorage.getItem('usuarioLogueado');
+    let usuarioLogueado = usuarioLogueadoJSON || "No user";//Estoy tomando estos productos de LS
+    console.log(usuarioLogueado);
+    nombreUsuarioLogueado.innerText = `Hi ${usuarioLogueado}`;
+}
+
+obtenerNombreUsuarioLogueado();
+
 const mostrarFormNuevoProducto = () => {
     console.log('Abrir form de nuevo producto');
 }
