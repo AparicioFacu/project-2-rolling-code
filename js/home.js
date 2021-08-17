@@ -3,13 +3,16 @@ const gamesCards = document.getElementById("games-cards");
 const contenedorCards = document.getElementById("contenedor-cards");
 // elemento para carousel
 const gamesCarousel = document.getElementById("games-carousel");
+const buttonCarousel = document.getElementById("button-carousel");
 
+const gamesJSON = localStorage.getItem('games');
 let games = JSON.parse(gamesJSON) || [];
 //Estoy tomando estos games de LS
 console.log('Array de games :', games);
 
 // CARDS DE VIDEO GAMES
 
+// funcion que me renderice las cards de video juegos
 function crearContenedoresCards() {
   const cantidadContenedores = parseInt(Math.ceil(games.length/3));
   console.log('cantidad de contenedores', cantidadContenedores);
@@ -19,7 +22,7 @@ function crearContenedoresCards() {
         <div class="d-flex justify-content-end align-items-center d-lg-none"><span class="me-1">
           Ver más</span><i class="fas fa-arrow-right"></i>
         </div>
-        <div id="games-cards-${i}" class="cards-contenedor mb-5 d-flex justify-content-start justify-content-xl-center overflow-auto">
+        <div id="games-cards-${i}" class="cards-contenedor mb-5 d-flex justify-content-start justify-content-xl-center overflow-auto demoScroll sc5">
         
         </div>
     `
@@ -81,86 +84,6 @@ function crearContenedoresCards() {
 }
 crearContenedoresCards();
 
-// funcion que me renderice los games para mostrar al usario en cards
-// function mostrarCardsGames() {
-  // const contenido = games.map((game, index) => {
-  //   // console.log(usuario.id);
-  //   if (index >= 0 && index <=2) {
-  //     return `  
-      
-  //     <div class="card-game">
-  //       <div>
-  //           <img src="${game.src}"
-  //               class="card-img-top card-image" alt="game-img">
-  //       </div>
-  //       <div class="card-description">
-  //           <div class="d-flex flex-column  mx-2 py-2 ">
-  //               <h3>Oferta del mes</h3>
-  //               <div class="d-flex justify-content-between alingn-items-center">
-  //               <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
-  //               <button class="btn-buy"><b>BUY NOW</b></button>
-  //               </div>
-  //           </div>
-  //           <div class="m-0 row  ">
-  //               <div class="col-3 card-oferta d-flex justify-content-center align-items-center">
-  //                   <span>-${game.descuento}%</span>
-  //               </div>
-  //               <div class="col-9 card-precio">
-  //                   <span><s>ARS$ ${game.precio}</s></span>
-  //                   <span><i>ARS$ ${
-  //                     game.precio - (game.descuento * game.precio) / 100
-  //                   }</i></span>
-  //               </div>
-  //           </div>
-  //       </div>
-  //   </div>
-  //    `;
-  //   }
-  // });
-//   const contenido1 = games.map((game, index) => {
-//     // console.log(usuario.id);
-//     if (index >= 3) {
-//       return `  
-//       <div class="card-game">
-//         <div>
-//             <img src="${game.src}"
-//                 class="card-img-top card-image" alt="game-img">
-//         </div>
-//         <div class="card-description">
-//             <div class="d-flex flex-column  mx-2 py-2 ">
-//                 <h3>Oferta del mes</h3>
-//                 <div class="d-flex justify-content-between alingn-items-center">
-//                 <h5>¡ Fecha limite ${game.fechaLimite}!</h5>
-//                 <button class="btn-buy"><b>BUY NOW</b></button>
-//                 </div>
-//             </div>
-//             <div class="m-0 row  ">
-//                 <div class="col-3 card-oferta d-flex justify-content-center align-items-center">
-//                     <span>-${game.descuento}%</span>
-//                 </div>
-//                 <div class="col-9 card-precio">
-//                     <span><s>ARS$ ${game.precio}</s></span>
-//                     <span><i>ARS$ ${
-//                       game.precio - (game.descuento * game.precio) / 100
-//                     }</i></span>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-//      `;
-//     }
-//   });
-//          const allHtmlcontent = contenido.join("");
-//          gamesCards.innerHTML = allHtmlcontent;
-//          gamesCards2.innerHTML = allHtmlcontent;
-//          const allHtmlcontent1 = contenido1.join("");
-//          gamesCards1.innerHTML = allHtmlcontent1;
-// }
-// mostrarCardsGames();
-
-// CAROUSEL VIDEO GAMES
-
-// CREAR CAROUSEL
 
 // funcion que me renderice el contenido del carousel
 function mostrarCarouselGames() {
@@ -242,6 +165,29 @@ function mostrarCarouselGames() {
   gamesCarousel.innerHTML = allHtmlcontent;
 }
 mostrarCarouselGames();
+// Funcion que crea los slides button del carousel
+function mostrarCarouselButton() {
+  const button = games.map((game, index) => {
+    let slideTo = (game.id - 1);
+    let slide = (game.id + 1);
+    if (index === 0) {
+      return `
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+      aria-label="Slide 1" class="active">
+      </button>
+      `
+    } else {
+      return`
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${slideTo}"
+      aria-label="Slide ${slide}">
+      </button>
+      `
+    }
+});
+const allHtmlcontent = button.join("");
+buttonCarousel.innerHTML = allHtmlcontent;
+}
+mostrarCarouselButton();
 
 
 // Funcion para cambiar imagen con hover y  establecer imagen de fondo

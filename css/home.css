@@ -68,6 +68,9 @@ body {
     max-width: 80%;
     margin:0 0.5rem 0.3rem 0;
 }
+.game-description img:hover {
+   cursor: pointer;
+}
 .game-description span {
     font-family: Arial, Helvetica, sans-serif;
     font-size: smaller;
@@ -192,3 +195,25 @@ ol.carousel-indicators {
 }
 
 /*  */
+/* Scroll 5 */
+
+.sc5::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+  }
+  .sc5::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .sc5::-webkit-scrollbar-thumb {
+    background: rgb(18, 23, 24);
+    background: linear-gradient(
+        90deg,
+        rgba(20, 64, 73, 0.541) 0%,
+        rgba(15, 74, 97, 0.5) 50%,
+        rgba(7, 125, 179, 0.8) 100%,
+        rgba(0, 172, 255, 1) 100%
+    );
+    border-radius: 10px;
+      -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+  }
