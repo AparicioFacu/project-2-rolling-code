@@ -122,7 +122,7 @@ const loginUsuario = (event) => {
         if (activeUser && validCredential) {
             if (userTryingLoggin.role === 'admin') {
                 //Muestro directamente pantalla de administrador
-                window.location.href = "./html/admin.html";
+                window.location.href = "./html/navbar.html";
             } else {
                 //Muestro pantalla de usuario basico
                 window.location.href = "./home.html";

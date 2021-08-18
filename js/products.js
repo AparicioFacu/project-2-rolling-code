@@ -4,18 +4,6 @@ const btnListsProducts = document.getElementById('list-products-btn');
 const btnListsUsers = document.getElementById('list-users-btn');
 const btnUserData = document.getElementById('btn-user-logged-data');
 
-//usuario logueado de prrueba
-const usuarioLogueadoDePrueba = {
-    id: 1050,
-    email: 'ariro@gmail.com',
-    pass: 'ariro',
-    fullname: 'Ariel Ruben Romano',
-    role: 'basic',
-    active: true
-}
-localStorage.setItem('userLogged', JSON.stringify(usuarioLogueadoDePrueba))
-
-
 const mostrarFormNuevoProducto = () => {
     console.log('Abrir form de nuevo producto');
 }
@@ -118,7 +106,7 @@ const traerDataUsuario = () => {
     const fullname = document.getElementById('fullname');
     const email = document.getElementById('email');
     const pass = document.getElementById('pass');
-    const usuarioLogueado = JSON.parse(localStorage.getItem('userLogged'));
+    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
     console.log(usuarioLogueado);
     fullname.value = usuarioLogueado.fullname;
     email.value= usuarioLogueado.email;
@@ -136,16 +124,22 @@ const modifyDataUser = (event) => {
     const email = document.getElementById('email');
     const pass = document.getElementById('pass');
     //Buscamos el usurio en cuestion
-    const usuarios = localStorage.getItem('usuarios');
-    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogged'));
+    let usuarios = JSON.parse(localStorage.getItem('usuarios'));
+    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+    console.log(usuarios);
+    console.log(usuarioLogueado);
     const nuevaListaUsuario = usuarios.map(usuario => {
         if(usuario.id === usuarioLogueado.id) {
-            return {
+            const usuarioModificado = {
                 ...usuario,
-                fullname,
-                email,
-                pass,
+                fullname: fullname.value,
+                email: email.value,
+                pass: pass.value,
             }
+            console.log(usuarioModificado);
+            localStorage.removeItem('usuarioLogueado');
+            localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioModificado))
+            return usuarioModificado
         }else {
             return usuario
         }
