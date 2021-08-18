@@ -135,7 +135,7 @@
 
   <!-- modal Editar Nota -->
 
-  <div class="modal fade" id="editarUsuarios" tabindex="-1" aria-labelledby="titulo" aria-hidden="true">
+<div class="modal fade" id="editarUsuarios" tabindex="-1" aria-labelledby="titulo" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark">
             <div class="modal-body" id="">
@@ -150,7 +150,18 @@
                           <option >Admin</option>
                           <option >Basic</option>                   
                       </select>
-                    </div>                  
+                    </div>
+                    <div class="mb-3">
+                      <label for="editarCuentaInput" class="col-form-label tituloModal">Cuenta</label>
+                      <div class="row">
+                        <div class="col-9">
+                          <input autocomplete="off" type="text" class="form-control bg-secondary" id="editarCuentaInput">
+                        </div>
+                        <div class="col-3">
+                          <button type="button" onclick="activarCuentaUsuario()" id="buttonCuenta" class="btn btn-info">Activar</button>
+                        </div>
+                      </div>               
+                    </div>
                     <div class="modal-footer1 modal-footer d-flex justify-content-between">
                         <button class="btn btn-danger text-start" data-bs-dismiss="modal">Cancelar</button>
                         <button id="btnEditar"class="btn btn-success">Editar</button>
