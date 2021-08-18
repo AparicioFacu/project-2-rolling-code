@@ -15,6 +15,12 @@ body {
     color: rgba(247, 247, 247, 0.849);
     font-family: "Teko", sans-serif;
 }
+
+/* HEADER */
+.header-games {
+  
+}
+
 /* CAROUSEL CONTAINER*/
 /* image */
 .game-image {
@@ -135,6 +141,7 @@ body {
         width: 15%;
     }
   }
+
 /* Section Cards */
 .card-game {
    width: 350px;
@@ -172,29 +179,6 @@ body {
     color: rgb(0, 225, 255);
 }
 
-
-/* prueba */
-
-/*  */
-.carousel-caption {
-    background-color: rgb(0 0 0 / 46%);
-    text-align: left;
-    padding: 25px;
-    border-radius: 10px;
-}
-ol.carousel-indicators {
-    display: block;
-    left: auto;
-    bottom: 50px;
-    right: 15px;
-}
-.carousel-indicators li {
-    height: 5px;
-    background-color: #ffeb3b;
-    opacity: .6;
-}
-
-/*  */
 /* Scroll 5 */
 
 .sc5::-webkit-scrollbar {
@@ -217,3 +201,28 @@ ol.carousel-indicators {
     border-radius: 10px;
       -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
   }
+
+/* HEADER CAROUSEL */
+/* .carousel-header-img {
+    height: 500px;
+    width: 100%;
+}
+.carousel-caption-header {
+    background-color: rgb(0 0 0 / 46%);
+    text-align: left;
+    padding: 25px;
+    border-radius: 10px;
+}
+.carousel-indicators-header {
+    display: block;
+    left: auto;
+    bottom: 50px;
+    right: 15px;
+}
+.carousel-indicators-header li {
+    height: 5px;
+    background-color: #ffeb3b;
+    opacity: .6;
+} */
+
+/*  */
