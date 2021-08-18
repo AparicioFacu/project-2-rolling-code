@@ -5,6 +5,8 @@ const detalleUsuarioBody = document.getElementById('detalleUsuarioBody');
 /**modal Editar */
 const editarNombreInput = document.getElementById('editarNombreInput');
 const editarRolesSelect = document.getElementById('editarRolesSelect');
+const editarCuentaInput = document.getElementById('editarCuentaInput');
+const buttonCuenta = document.getElementById('buttonCuenta');
 
 let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
@@ -28,10 +30,17 @@ function detalleUsuario(id){
         return usuario.id === id;
     };
     const usuarioEncontrado = usuarios.find(usuarioFind);
+    let cuenta;
+    if(usuarioEncontrado.active === true){
+        cuenta = "Activa";
+    }else{
+        cuenta = "Inactiva";
+    }    
     const contenido = `
             <p><b>Nombre</b>: ${usuarioEncontrado.fullname} </p>
             <p><b>Email</b>: ${usuarioEncontrado.email}</p>
             <p><b>Rol</b>: ${usuarioEncontrado.role} </p>
+            <p><b>Cuenta</b>: ${cuenta} </p>
         `;
     detalleUsuarioBody.innerHTML = contenido;
 }
@@ -52,13 +61,22 @@ function buscarUsuarios() {
     }
 }
 let notaID = '';
+let cuenta;
 function mostrarModalEditar(id){
     function usuarioFind(usuario) {
         return usuario.id === id;
-    };
-    const usuarioEncontrado = usuarios.find(usuarioFind);
+    };  
+    const usuarioEncontrado = usuarios.find(usuarioFind);    
+    if(usuarioEncontrado.active === true){
+        cuenta = "Activa";
+        buttonCuenta.innerHTML = "Desactivar";
+    }else{
+        cuenta = "Inactiva";
+        buttonCuenta.innerHTML = "Activar";
+    }  
     editarNombreInput.value = usuarioEncontrado.fullname;
     editarRolesSelect.value = usuarioEncontrado.role;
+    editarCuentaInput.value = cuenta;
     notaID = id;
 }
 const btnEditar = document.getElementById('btnEditar');   
@@ -66,9 +84,18 @@ btnEditar.addEventListener('click', function editarUsuario(event){
     event.preventDefault();
     const nombreEditado = editarNombreInput.value;
     const rolEditado = editarRolesSelect.value;
+    let cuentaEditada;
+    console.log(cuenta);
+    if(cuenta === 'Inactiva'){
+        cuentaEditada = !!cuenta;
+    }else{
+        cuentaEditada = !cuenta;
+    } 
+    console.log(cuentaEditada)
     const usuarioEditado = {
         fullname: nombreEditado,
-        role: rolEditado
+        role: rolEditado,
+        active: cuentaEditada
     };
     function actualizarUsuario(usuario){
         if(usuario.id === notaID){
@@ -84,6 +111,16 @@ btnEditar.addEventListener('click', function editarUsuario(event){
     myModal.hide();
     mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 });
+function activarCuentaUsuario(){
+    if(buttonCuenta.innerHTML === 'Desactivar'){
+        buttonCuenta.innerHTML = 'Activar';
+        editarCuentaInput.value = 'Inactiva';
+    }else{
+        buttonCuenta.innerHTML = 'Desactivar';
+        editarCuentaInput.value = 'Activa';       
+    }
+    return buttonCuenta.innerHTML;
+}
 
 /** Paginacion */
 let pagActual = 1;

@@ -64,7 +64,8 @@ const administradoresHarcodeados = [
         fullname: "Santiago Romano",
         id: "1709cd68-9450-4ebb-86e8-b407f4012e6d",
         pass: "santi45",
-        role: "admin"
+        role: "admin",
+        active: true
     },
     {
         email: "romanomatias99@gmail.com",
@@ -72,6 +73,7 @@ const administradoresHarcodeados = [
         id: "1c9ab0d0-2ea1-46af-8c9b-3713153f5074",
         pass: "romanomatias99",
         role: "basic",
+        active: true
     },
 ]
 const usuariosJSON = localStorage.getItem('usuarios')
@@ -84,42 +86,57 @@ if(!usuariosJSON){
 let usuarios = JSON.parse(usuariosJSON) || [];
 
 console.log(usuarios);
-
 const loginUsuario = (event) => {
     event.preventDefault();
     console.log("te estas logueando");
     //tomamos los datos ingresados por el user
     const userTryingLoggin = {
         email: emailInput.value,
-        pass: passInput.value
+        pass: passInput.value,
+        active: true
     }
     console.log(userTryingLoggin)
     //Verificamos que sea un usuario valido
     let validUser = false;
+    let userActivo = false;
     usuarios.forEach(user => {
-        if (user.email === userTryingLoggin.email && user.pass === userTryingLoggin.pass) {
-            //Hubo coincidencia
-            validUser = true;
-            //Tomamos el role del usuario para poder luego elegir que pantalla mostrar
-            userTryingLoggin.role = user.role;
+        console.log(user.active)
+        if(user.active === userTryingLoggin.active){
+            console.log(user.active === userTryingLoggin.active)
+            userActivo= true;
+            if (user.email === userTryingLoggin.email && user.pass === userTryingLoggin.pass) {
+                //Hubo coincidencia
+                validUser = true;               
+                //Tomamos el role del usuario para poder luego elegir que pantalla mostrar
+                userTryingLoggin.role = user.role;
+            }
         }
     });
-    if (validUser) {
-        if (userTryingLoggin.role === 'admin') {
-            //Muestro directamente pantalla de administrador
-            window.location.href = "./html/admin.html";
-        } else {
-            //Muestro pantalla de usuario basico
-            window.location.href = "./home.html";
+    if(userActivo){       
+        if (validUser) {
+            if (userTryingLoggin.role === 'admin') {
+                //Muestro directamente pantalla de administrador
+                window.location.href = "./html/admin.html";
+            } else {
+                //Muestro pantalla de usuario basico
+                window.location.href = "./home.html";
+            }
+        }else{
+            console.log("mostrar mensaje al usuario - credenciales no validas");
+            msjError.innerHTML = "El email o password es incorrecto"
+            msjError.setAttribute('class', 'alert alert-danger');
+            setTimeout(() => {
+                msjError.setAttribute('class', 'd-none')
+            }, 1500);
         }
-    } else {
-        console.log("mostrar mensaje al usuario - credenciales no validas");
-        msjError.innerHTML = "El email o password es incorrecto"
+    }else{
+        console.log("mostrar mensaje al usuario - esta cuenta ha sido desabilitada");
+        msjError.innerHTML = "Cuenta Deshabilitada"
         msjError.setAttribute('class', 'alert alert-danger');
         setTimeout(() => {
             msjError.setAttribute('class', 'd-none')
-        }, 1500);
-    }
+        }, 1500);  
+    } 
 }
 
 // Intento de hacer el usuario logeado 
