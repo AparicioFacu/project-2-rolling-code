@@ -20,6 +20,7 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&display=swap" rel="stylesheet">
 
 </head>
 <!-- NavBarAdmin -->
@@ -140,7 +141,7 @@
   <div class="modal-dialog ">
     <div class="modal-content">
       <div class="d-flex justify-content-between p-4 pb-2 modal-newproduct-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Products Details</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><b>New Products Details</b></h5>
         <button id="btn-close-form" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form id="log-in-form" class="modal-newproduct" action="" onsubmit="createNewProduct(event)">
@@ -192,7 +193,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-center mb-4">
-          <input class="btn btn-secondary" type="submit" name="Iniciar Sesion" value="Agregar producto" id="">
+          <input class="btn btn-dark" type="submit" name="Iniciar Sesion" value="Agregar producto" id="">
         </div>
       </form>
     </div>
@@ -203,15 +204,15 @@
 <div class="modal fade" id="modalPerfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Bienvenido</h5>
+      <div class="modal-header d-flex modalCabeza">
+        <h5 class="modal-title" id="exampleModalLabel">Datos Admin</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div id="verPerfil" class="modal-body">
+      <div id="verPerfil" class="modal-body modalPerfil mb-2">
         <!-- dinamico con JS -->
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <div class="d-flex justify-content-end mb-2 me-3">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

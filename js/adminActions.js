@@ -1,4 +1,4 @@
-
+// Elemento del HTML 
 const verPerfil = document.getElementById('verPerfil')
 
 // Tremos los usuarios del local storage 
@@ -7,25 +7,18 @@ let usuarios = JSON.parse(usuariosJSON) || [];
 
 console.log(usuarios);
 
-
+const userLog = JSON.stringify(usuarios);
+localStorage.setItem('usuarios', userLog);
 
 // funcion para ver perfil logeado
-function verDetallePerfil() {
 
-  // function usuarioFind(usuario) {
-  //   return usuario.id === id;
-  // };
-  // let fecha = new Date(usuarioEncontrado.creacion)
-  // const usuarioEncontrado = usuarios.find(usuarioFind);
   const contenido = `
-  <p><b>Fecha</b>: ${fecha.toLocaleString()} </p>
-          <p><b>Nombre</b>: ${usuario.fullname} </p>
-          <p><b>Email</b>: ${usuario.email}</p>
-          <p><b>Rol</b>: ${usuario.role} </p>
-          <p><b>Password</b>: ${usuario.pass} </p>
+          <p><b>Nombre</b>: ${userLog.fullname} </p>
+          <p><b>Email</b>: ${userLog.email}</p>
       `;
   verPerfil.innerHTML = contenido;
-}
+
+
 
 // JS de la BARRA LATERAL NAV
 
