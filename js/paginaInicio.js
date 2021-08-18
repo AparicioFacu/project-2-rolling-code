@@ -2,6 +2,7 @@
 const emailInput = document.getElementById('email');
 const passInput = document.getElementById('pass');
 const msjError = document.getElementById('msj-error-login');
+localStorage.removeItem('usuarioLogueado');
 const newGamesHarcodeados = [
     {
       //datos para usuario
@@ -76,6 +77,7 @@ const administradoresHarcodeados = [
         active: true
     },
 ]
+console.log(administradoresHarcodeados);
 const usuariosJSON = localStorage.getItem('usuarios')
 if(!usuariosJSON){
     console.log("no existen users los creo");
@@ -93,27 +95,31 @@ const loginUsuario = (event) => {
     const userTryingLoggin = {
         email: emailInput.value,
         pass: passInput.value,
-        active: true
+        // active: true
     }
     console.log(userTryingLoggin)
     //Verificamos que sea un usuario valido
     let validUser = false;
-    let userActivo = false;
+    let validCredential = false;
+    let activeUser = false;
     usuarios.forEach(user => {
-        console.log(user.active)
-        if(user.active === userTryingLoggin.active){
-            console.log(user.active === userTryingLoggin.active)
-            userActivo= true;
+        console.log(user);
             if (user.email === userTryingLoggin.email && user.pass === userTryingLoggin.pass) {
-                //Hubo coincidencia
-                validUser = true;               
-                //Tomamos el role del usuario para poder luego elegir que pantalla mostrar
-                userTryingLoggin.role = user.role;
+                //Hubo coincidencia pero falta chequear si el usuario esta activo
+                console.log("las credenciales eran validas");
+                validCredential = true;
+                if(user.active === true) {//ademas las credenciales correspondian a un usuario activo
+                    console.log("el usuario esta activo");
+                    activeUser = true;
+                    // validUser = true;               
+                    //Tomamos el role del usuario para poder luego elegir que pantalla mostrar
+                    userTryingLoggin.role = user.role;
+                    //Metemos el usuario al localStorage para tener guardado el usuario logueado
+                    localStorage.setItem('usuarioLogueado', JSON.stringify(user))   
+                }
             }
-        }
-    });
-    if(userActivo){       
-        if (validUser) {
+        })
+        if (activeUser && validCredential) {
             if (userTryingLoggin.role === 'admin') {
                 //Muestro directamente pantalla de administrador
                 window.location.href = "./html/admin.html";
@@ -121,29 +127,31 @@ const loginUsuario = (event) => {
                 //Muestro pantalla de usuario basico
                 window.location.href = "./home.html";
             }
-        }else{
+        }else if(!activeUser && !validCredential){
             console.log("mostrar mensaje al usuario - credenciales no validas");
             msjError.innerHTML = "El email o password es incorrecto"
             msjError.setAttribute('class', 'alert alert-danger');
             setTimeout(() => {
                 msjError.setAttribute('class', 'd-none')
             }, 1500);
+        }else if(validCredential && !activeUser) {
+            console.log("mostrar mensaje al usuario - esta cuenta ha sido desabilitada");
+            msjError.innerHTML = "Cuenta Deshabilitada"
+            msjError.setAttribute('class', 'alert alert-danger');
+            setTimeout(() => {
+                msjError.setAttribute('class', 'd-none')
+            }, 1500);  
+        }else{
+            console.log("caso no contemplado");
         }
-    }else{
-        console.log("mostrar mensaje al usuario - esta cuenta ha sido desabilitada");
-        msjError.innerHTML = "Cuenta Deshabilitada"
-        msjError.setAttribute('class', 'alert alert-danger');
-        setTimeout(() => {
-            msjError.setAttribute('class', 'd-none')
-        }, 1500);  
-    } 
+     
 }
 
-// Intento de hacer el usuario logeado 
+// // Intento de hacer el usuario logeado 
 
-function userLogged(){
-    var node = document.createElement("li");
-    var textnode = document.createTextNode("Water");
-    node.appendChild(textnode);
-    document.getElementById("userLog").appendChild(node);
-}
+// function userLogged(){
+//     var node = document.createElement("li");
+//     var textnode = document.createTextNode("Water");
+//     node.appendChild(textnode);
+//     document.getElementById("userLog").appendChild(node);
+// }
