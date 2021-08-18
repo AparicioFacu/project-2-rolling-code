@@ -36,7 +36,7 @@ body{
 }
 .icono{
     padding-top: 20px;
-    font-size: 70px;
+    width: 100px;
     color: white;
 }
 .register{
