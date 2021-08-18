@@ -151,3 +151,14 @@ const modifyDataUser = (event) => {
     const botonCerrarFormulario = document.getElementById('btn-close-form-2');
     botonCerrarFormulario.click();
 }
+
+
+const btnLogOut = document.getElementById('log-out');
+const logOutUser = () => {
+    console.log("log out");
+    //Elimino el usuario logueado 
+    localStorage.removeItem('usuarioLogueado');
+    window.location.href = "../paginaInicio.html";
+}
+
+btnLogOut.addEventListener('click', logOutUser)
