@@ -43,7 +43,7 @@
                     <a class="dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false"><i class="fas fa-user"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!"><i class="far fa-id-badge"></i>Mi Perfil</a></li>
+                        <li><a id="btn-user-logged-data" class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-id-badge"></i>Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="#!"><i class="fas fa-cog"></i>Configuracion</a></li>
                         <li>
                             <hr class="dropdown-divider" />
@@ -194,6 +194,43 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-newproduct-header">
+        <div class="modal-header text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Informacion del usuario</h5>
+          <button id="btn-close-form-2" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-container">
+                <form action="" class="backgroundForm" onsubmit="modifyDataUser(event)">
+                    <!-- <div class="text-center m-4">Nombre de usuario</div>
+                    <hr> -->
+                    <div id="msj-error-login" class="alert alert-danger d-none" role="alert">
+                        A simple danger alert—check it out!
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control " id="fullname" placeholder="Diego Maradona">
+                        <label for="fullname">Nombre completo</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control " id="email" placeholder="name@example.com">
+                        <label for="email">Correo Electrónico</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control " id="pass" placeholder="Password">
+                        <label for="pass">Contraseña</label>
+                    </div>
+                    <div class="form-floating my-4 text-center">
+                        <button type="submit" class="btn green-background btnRegister text-white">Modificar datos</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 <!-- Bootstrap core JS-->
