@@ -22,6 +22,7 @@ function eliminarUsuario(id) {
     actualizarLocalStorage();
     mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 }
+
 function detalleUsuario(id){
     function usuarioFind(usuario) {
         return usuario.id === id;

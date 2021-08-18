@@ -77,12 +77,14 @@ body {
 }
 
 /* Button prev-next Bootstrap Carousel */
-.btn-carousel-prev {
+.btn-carousel-prev, .btn-carousel-next {
     position: absolute;
     top: 35%;
     bottom: 30%;
     z-index: 1;
     width: 3%;
+}
+.btn-carousel-prev {
     background: rgb(7, 125, 179);
     background: linear-gradient(
         90deg,
@@ -93,11 +95,6 @@ body {
     );
 }
 .btn-carousel-next {
-    position: absolute;
-    top: 35%;
-    bottom: 30%;
-    z-index: 1;
-    width: 3%;
     background: rgb(18, 23, 24);
     background: linear-gradient(
         90deg,
@@ -126,15 +123,25 @@ body {
     border: 1px;
     border-radius: 3px;
 }
+@media only screen and (max-width: 768px) {
+    .btn-carousel-next, .btn-carousel-prev {
+        position: absolute;
+        top: 100%;
+        bottom: -10%;
+        z-index: 1;
+        width: 15%;
+    }
+  }
 /* Section Cards */
 .card-game {
-    width: 350px;
+   width: 350px;
+    min-width: 350px;
     box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
     padding: 0;
-    margin: 0.5rem 1rem;
+    margin: 0.5rem 0.5rem 0.5rem 0rem;
 }
 .card-image {
-    height: 380px;
+    height: 350px;
 }
 .card-description {
     background-image: repeating-linear-gradient(135deg, rgb(13,120,167) 0px, rgb(13,120,167) 2px,rgb(14,121,168) 2px, rgb(14,121,168) 4px,rgb(15,122,169) 4px, rgb(15,122,169) 6px,rgb(14,121,168) 6px, rgb(14,121,168) 8px,rgb(17,124,171) 8px, rgb(17,124,171) 10px,rgb(16,123,170) 10px, rgb(16,123,170) 12px,rgb(14,121,168) 12px, rgb(14,121,168) 14px,rgb(13,120,167) 14px, rgb(13,120,167) 16px,rgb(17,124,171) 16px, rgb(17,124,171) 18px,rgb(15,122,169) 18px, rgb(15,122,169) 20px,rgb(16,123,170) 20px, rgb(16,123,170) 22px,rgb(16,123,170) 22px, rgb(16,123,170) 24px);
@@ -163,3 +170,25 @@ body {
 }
 
 
+/* prueba */
+
+/*  */
+.carousel-caption {
+    background-color: rgb(0 0 0 / 46%);
+    text-align: left;
+    padding: 25px;
+    border-radius: 10px;
+}
+ol.carousel-indicators {
+    display: block;
+    left: auto;
+    bottom: 50px;
+    right: 15px;
+}
+.carousel-indicators li {
+    height: 5px;
+    background-color: #ffeb3b;
+    opacity: .6;
+}
+
+/*  */
