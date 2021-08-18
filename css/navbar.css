@@ -2,16 +2,42 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+
+body{
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(2, 9, 11, 1) 0%,
+      rgba(22, 86, 110, 1) 50%,
+      rgba(2, 9, 11, 1) 100%,
+      rgba(0, 0, 0, 1) 100%
+  );    
+}
+
+/* NavBar */
+.user-login{
+  font-size: 25px;
+}
+.user-login a {
+color: #858da8;
+}
+.user-login a:hover {
+  color: rgb(42, 85, 134);
+  }
+.loguito{
+  width: 40px;
+}
+
+/* BARRA NAVEGACION LATERAL */
 .sidebar{
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
   width: 90px;
-  background: #11101D;
+  background: #212529;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -46,7 +72,7 @@
   right: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
   font-size: 23px;
   text-align: start;
   cursor: pointer;
@@ -106,12 +132,13 @@
   width: 20px;
   border: none;
   border-radius: 12px;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
   background: none;
 }
 .sidebar.open input{
   padding: 0 20px 0 50px;
   width: 100%;
+  background: rgb(43, 43, 46);
 }
 .sidebar .buscador{
   position: absolute;
@@ -124,11 +151,11 @@
 }
 .sidebar.open .buscador:hover{
   background: none;
-  color: #11101d;
+  color: #212529;
 }
 .sidebar .buscador:hover{
   background: rgb(42, 85, 134);
-  color: #11101d;
+  color: #212529;
 }
 
 .sidebar li a{
@@ -139,7 +166,7 @@
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: #11101D;
+  background: #212529;
 }
 .sidebar li a:hover{
   background: rgb(42, 85, 134);
@@ -160,7 +187,7 @@
 .sidebar li a:hover .links,
 .sidebar li a:hover i{
   transition: all 0.4s ease;
-  color: #11101D;
+  color: #212529;
 }
 .sidebar li i{
   height: 50px;
@@ -175,5 +202,34 @@
   }
 }
 
+
+/* footer */
+
+.footerAdmin {
+  background-color: #212529;
+  position: absolute;
+  bottom: 0%;
+}
+.volverArriba{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border: solid grey;
+}
+.volverArriba i{
+  padding-top: 20px;
+  color: white;
+}
+.volverArriba:hover{
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(2, 9, 11, 1) 0%,
+      rgba(22, 86, 110, 1) 50%,
+      rgba(2, 9, 11, 1) 100%,
+      rgba(0, 0, 0, 1) 100%
+  );
+}
 
 
