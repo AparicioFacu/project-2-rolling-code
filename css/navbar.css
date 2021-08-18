@@ -202,6 +202,22 @@ color: #858da8;
   }
 }
 
+/* Modal Perfil */
+.modalCabeza h5 {
+  font-family: 'Anton', sans-serif;
+  color: #212529;
+}
+
+
+.modalPerfil{
+  background-color: #212529;
+}
+.modalPerfil p {
+  color: rgba(22, 86, 110, 1);
+  font-size: 20px;
+  font-family: "Teko", sans-serif;
+}
+
 
 /* footer */
 
