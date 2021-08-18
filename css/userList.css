@@ -95,15 +95,18 @@ body{
 .tituloModal{
     color: rgba(22, 86, 110, 1);
 }
-.icono{
+.iconoUsuarios{
     font-size: 80px;
     padding-top: 30px;
     padding-bottom: 0px;
     color: white;
 }
-.titulo{
+.tituloUsuarios{
     padding-bottom: 20px;
 }
-
+.modal-footer1 {
+    border-top: none;
+    padding-top: 30px;
+}  
 
 

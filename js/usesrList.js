@@ -2,9 +2,16 @@ const tablebody = document.querySelector('.tablebody');
 const show = document.getElementById('show');
 const paginacionTabla = document.getElementById('paginacionTabla');
 const detalleUsuarioBody = document.getElementById('detalleUsuarioBody');
-
+/**modal Editar */
+const editarNombreInput = document.getElementById('editarNombreInput');
+const editarRolesSelect = document.getElementById('editarRolesSelect');
 
 let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+function actualizarLocalStorage(){
+    const notaJson = JSON.stringify(usuarios);
+    localStorage.setItem('usuarios', notaJson);
+}
 
 function eliminarUsuario(id) {
     function usuariosFilter(usuario) {
@@ -12,8 +19,7 @@ function eliminarUsuario(id) {
     };
     const usuariosFiltrados = usuarios.filter(usuariosFilter);
     usuarios = usuariosFiltrados;
-    const notaJson = JSON.stringify(usuarios);
-    localStorage.setItem('usuarios', notaJson);
+    actualizarLocalStorage();
     mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 }
 function detalleUsuario(id){
@@ -28,18 +34,56 @@ function detalleUsuario(id){
         `;
     detalleUsuarioBody.innerHTML = contenido;
 }
-function buscarUsuarios(event) {
-    event.preventDefault();
+function buscarUsuarios() {
     const busquedaInput = document.getElementById('busquedaInput');
-    const usuariosAll = JSON.parse(localStorage.getItem('usuarios'));
-
-    function filtrarUsuarios(usuario) {
-        return usuario.fullname.toLowerCase().includes(busquedaInput.value.toLowerCase());
+    const tabla = document.getElementById('tabla');
+    const tr = tabla.getElementsByTagName('tr');
+    for (let i = 0; i < tr.length; i++) {
+        const td = tr[i].getElementsByTagName('td')[0];
+        if(td){
+            const textValue = td.textContent || td.innerText;
+            if(textValue.toUpperCase().indexOf(busquedaInput.value.toUpperCase()) > -1 ){
+                tr[i].style.display = "";
+            }else{
+                tr[i].style.display = 'none';
+            }
+        }
     }
-    const usuarioFiltrado = usuariosAll.filter(filtrarUsuarios);
-    usuarios = usuarioFiltrado;
-    mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 }
+let notaID = '';
+function mostrarModalEditar(id){
+    function usuarioFind(usuario) {
+        return usuario.id === id;
+    };
+    const usuarioEncontrado = usuarios.find(usuarioFind);
+    editarNombreInput.value = usuarioEncontrado.fullname;
+    editarRolesSelect.value = usuarioEncontrado.role;
+    notaID = id;
+}
+const btnEditar = document.getElementById('btnEditar');   
+btnEditar.addEventListener('click', function editarUsuario(event){
+    event.preventDefault();
+    const nombreEditado = editarNombreInput.value;
+    const rolEditado = editarRolesSelect.value;
+    const usuarioEditado = {
+        fullname: nombreEditado,
+        role: rolEditado
+    };
+    function actualizarUsuario(usuario){
+        if(usuario.id === notaID){
+            return{...usuario, ...usuarioEditado};
+        }else{
+            return usuario;
+        }
+    } 
+    const usuarioActualizado = usuarios.map(actualizarUsuario);
+    usuarios = usuarioActualizado;
+    actualizarLocalStorage();
+    var myModal = bootstrap.Modal.getInstance(document.getElementById('editarUsuarios'));
+    myModal.hide();
+    mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
+});
+
 /** Paginacion */
 let pagActual = 1;
 /**cantidad de filas a mostrar en la tabla */
@@ -47,14 +91,9 @@ let cantidadElement = 4;
 function mostrarUsuariosPag(usuarios,tabla,filasPorPag,numPag){
     // tabla.innerHTML = "";
     numPag--;
-    console.log(filasPorPag);
-    console.log(numPag);
     let inicio = filasPorPag * numPag;
-    console.log(inicio);
     let fin = inicio + filasPorPag;   
-    console.log(fin);
     let elementoPag =  usuarios.slice(inicio,fin);
-    console.log(elementoPag);
     let contenido = [];
     for (let i = 0; i < elementoPag.length; i++){
         let usuario = elementoPag[i];
@@ -64,6 +103,7 @@ function mostrarUsuariosPag(usuarios,tabla,filasPorPag,numPag){
             <td>${usuario.role}</td>
             <td>
                 <button onclick="detalleUsuario('${usuario.id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detalleModal" data-bs-whatever="@mdo"><i class="fas fa-info-circle"></i></button>
+                <button onclick="mostrarModalEditar('${usuario.id}')" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editarUsuarios" data-bs-whatever="@mdo"><i class="fas fa-edit"></i></button>
                 <button onclick="eliminarUsuario('${usuario.id}')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
             </td>
         </tr>
