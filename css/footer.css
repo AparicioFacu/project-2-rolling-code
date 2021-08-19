@@ -54,7 +54,7 @@
     font-size: 18px;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 60px;
+    text-align: center;
 }
 
 .footer .tituloFooter1 {
@@ -81,21 +81,17 @@
 .bg {
     background-color: #0a0c0f;
 }
-.volverArriba{
-    background: transparent;
-    border: solid grey;
+.volverArriba {
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
 }
-.volverArriba i{
-    padding-top: 20px;
+.volverArriba:link,
+.volverArriba:visited,
+.volverArriba:active {
     color: white;
 }
-.volverArriba:hover{
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(2, 9, 11, 1) 0%,
-        rgba(22, 86, 110, 1) 50%,
-        rgba(2, 9, 11, 1) 100%,
-        rgba(0, 0, 0, 1) 100%
-    );
+.volverArriba:hover {
+    color: rgb(16, 69, 90);
 }
