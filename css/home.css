@@ -198,7 +198,7 @@ body {
      border-radius: 10px;
      box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
   }
-/* HEADER CAROUSEL */
+/* HEADER  */
 .header-games {
     background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
     overflow: hidden;
