@@ -3,55 +3,52 @@ const gamesCards = document.getElementById("games-cards");
 const contenedorCards = document.getElementById("contenedor-cards");
 // elemento para carousel
 const gamesCarousel = document.getElementById("games-carousel");
-<<<<<<< HEAD
 const buttonCarousel = document.getElementById("button-carousel");
 
-const gamesJSON = localStorage.getItem('games');
-=======
-let gamesJSON = localStorage.getItem('games')
->>>>>>> main
+const gamesJSON = localStorage.getItem("games");
 let games = JSON.parse(gamesJSON) || [];
 //Estoy tomando estos games de LS
-console.log('Array de games :', games);
+console.log("Array de games :", games);
 
 // CARDS DE VIDEO GAMES
 
 // funcion que me renderice las cards de video juegos
 function crearContenedoresCards() {
-  const cantidadContenedores = parseInt(Math.ceil(games.length/3));
-  console.log('cantidad de contenedores', cantidadContenedores);
+  const cantidadContenedores = parseInt(Math.ceil(games.length / 3));
+  console.log("cantidad de contenedores", cantidadContenedores);
   const contenidohtmlarray = [];
   for (let i = 0; i < cantidadContenedores; i++) {
-    const contenedor  = `
+    const contenedor = `
         <div class="d-flex justify-content-end align-items-center d-lg-none"><span class="me-1">
           Ver más</span><i class="fas fa-arrow-right"></i>
         </div>
         <div id="games-cards-${i}" class="cards-contenedor mb-5 d-flex justify-content-start justify-content-xl-center overflow-auto demoScroll sc5">
         
         </div>
-    `
+    `;
     contenidohtmlarray.push(contenedor);
-  };
-    const allHtmlcontent = contenidohtmlarray.join("");
-    contenedorCards.innerHTML = allHtmlcontent;
-    const arrayContenedoresCollection = document.getElementsByClassName("cards-contenedor");
-    // console.log(arrayContenedoresCollection);
-    const arrayContenedores =  [...arrayContenedoresCollection];
-    console.log('arrayContenedores', arrayContenedores);
+  }
+  const allHtmlcontent = contenidohtmlarray.join("");
+  contenedorCards.innerHTML = allHtmlcontent;
+  const arrayContenedoresCollection =
+    document.getElementsByClassName("cards-contenedor");
+  // console.log(arrayContenedoresCollection);
+  const arrayContenedores = [...arrayContenedoresCollection];
+  console.log("arrayContenedores", arrayContenedores);
   function mostrarCardsGames(cantidadContenedores) {
     for (let i = 0; i < cantidadContenedores; i++) {
-        let y = 3*i;
-        const grupoGames = [];
-        for (let j = y; j < (y + 3); j++){
-          console.log('j',j)
-          if (!(j >= games.length)) {
-            grupoGames.push(games[j]);
-          }
+      let y = 3 * i;
+      const grupoGames = [];
+      for (let j = y; j < y + 3; j++) {
+        console.log("j", j);
+        if (!(j >= games.length)) {
+          grupoGames.push(games[j]);
         }
-        console.log(`grupo ${i}`, grupoGames);
-    
-        const contenido = grupoGames.map((game) => { 
-            return `  
+      }
+      console.log(`grupo ${i}`, grupoGames);
+
+      const contenido = grupoGames.map((game) => {
+        return `  
             <div class="card-game">
               <div>
                   <img src="${game.src}"
@@ -79,15 +76,14 @@ function crearContenedoresCards() {
               </div>
           </div>
            `;
-        });
-        const allHtmlcontent = contenido.join("");
-        arrayContenedores[i].innerHTML = allHtmlcontent
+      });
+      const allHtmlcontent = contenido.join("");
+      arrayContenedores[i].innerHTML = allHtmlcontent;
     }
   }
   mostrarCardsGames(cantidadContenedores);
 }
 crearContenedoresCards();
-
 
 // funcion que me renderice el contenido del carousel
 function mostrarCarouselGames() {
@@ -171,28 +167,30 @@ function mostrarCarouselGames() {
 mostrarCarouselGames();
 // Funcion que crea los slides button del carousel
 function mostrarCarouselButton() {
-  const button = games.map((game, index) => {
-    let slideTo = (game.id - 1);
-    let slide = (game.id + 1);
+  let slide = 0;
+  const button = games.map((games, index) => {
+    slide ++
     if (index === 0) {
+      console.log();
       return `
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
       aria-label="Slide 1" class="active">
       </button>
-      `
+      `;
     } else {
-      return`
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${slideTo}"
+      return `
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${slide - 1}"
       aria-label="Slide ${slide}">
       </button>
-      `
+      `;
+
     }
-});
-const allHtmlcontent = button.join("");
-buttonCarousel.innerHTML = allHtmlcontent;
+    
+  });
+  const allHtmlcontent = button.join("");
+  buttonCarousel.innerHTML = allHtmlcontent;
 }
 mostrarCarouselButton();
-
 
 // Funcion para cambiar imagen con hover y  establecer imagen de fondo
 function cambiarImagen() {

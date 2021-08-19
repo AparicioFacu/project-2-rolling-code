@@ -17,9 +17,6 @@ body {
 }
 
 /* HEADER */
-.header-games {
-  
-}
 
 /* CAROUSEL CONTAINER*/
 /* image */
@@ -198,31 +195,59 @@ body {
         rgba(7, 125, 179, 0.8) 100%,
         rgba(0, 172, 255, 1) 100%
     );
-    border-radius: 10px;
-      -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+     border-radius: 10px;
+     box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
   }
-
 /* HEADER CAROUSEL */
-/* .carousel-header-img {
-    height: 500px;
-    width: 100%;
+.header-games {
+    background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
 }
-.carousel-caption-header {
-    background-color: rgb(0 0 0 / 46%);
-    text-align: left;
-    padding: 25px;
-    border-radius: 10px;
+.efecto-letras{
+    display: inline-flex;
+    color: rgba(0, 172, 255, 1);
+    color: rgba(7, 125, 179);
 }
-.carousel-indicators-header {
-    display: block;
-    left: auto;
-    bottom: 50px;
-    right: 15px;
+.efecto-w {
+    animation: efecto 2s cubic-bezier(0.77, 0, 0.7, 1);
 }
-.carousel-indicators-header li {
-    height: 5px;
-    background-color: #ffeb3b;
-    opacity: .6;
-} */
+.efecto-a {
+    animation: efecto 1.7s cubic-bezier(0.77, 0, 0.7, 1);
+}
+.efecto-r { 
+    animation: efecto 1.5s cubic-bezier(0.77, 0, 0.7, 1);
+}
+@keyframes efecto {
+    0% {
+        transform: scale(0) rotateZ(0);
+        transform: translateX(-1000px);
+    }
+    70% {
+        transform: scale(1.5) rotateZ(540deg);
+        
+    }
+    100% {
+        transform: scale(1) rotateZ(720deg);
+    }
+}
+.efecto-games {
+    display: inline-flex;
+    animation: efecto-games 2.2s cubic-bezier(0.77, 0, 0.7, 1);
+}
+@keyframes efecto-games {
+    0% {
+        transform: translateX(1000px);
+    }
+}
+.efecto-logo {
+    display: inline-flex;
+    animation: efecto-logo 2.2s cubic-bezier(0.77, 0, 0.7, 1);;
+}
+@keyframes efecto-logo {
+    0% {
+        transform: translateY(-500px);
+    }
+}
 
-/*  */
+
