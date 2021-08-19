@@ -158,7 +158,7 @@ const logOutUser = () => {
     console.log("log out");
     //Elimino el usuario logueado 
     localStorage.removeItem('usuarioLogueado');
-    window.location.href = "../paginaInicio.html";
+    window.location.href = "../index.html";
 }
 
 btnLogOut.addEventListener('click', logOutUser)

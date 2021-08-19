@@ -62,7 +62,7 @@ const newGamesHarcodeados = [
 const administradoresHarcodeados = [
     {
         email: "santi@gmail.com",
-        fullname: "Santiago Romano",
+        fullname: "Santiago",
         id: "1709cd68-9450-4ebb-86e8-b407f4012e6d",
         pass: "santiago445",
         role: "admin",
@@ -70,7 +70,7 @@ const administradoresHarcodeados = [
     },
     {
         email: "romanomatias99@gmail.com",
-        fullname: "Matias Romano",
+        fullname: "Matias",
         id: "1c9ab0d0-2ea1-46af-8c9b-3713153f5074",
         pass: "romanomatias99",
         role: "basic",
@@ -115,7 +115,8 @@ const loginUsuario = (event) => {
                     //Tomamos el role del usuario para poder luego elegir que pantalla mostrar
                     userTryingLoggin.role = user.role;
                     //Metemos el usuario al localStorage para tener guardado el usuario logueado
-                    localStorage.setItem('usuarioLogueado', JSON.stringify(user))   
+                    localStorage.setItem('usuarioLogueado', JSON.stringify(user))
+                    limpearFormulario(); 
                 }
             }
         })
@@ -146,3 +147,9 @@ const loginUsuario = (event) => {
         }
      
 }
+
+function limpearFormulario() {
+    emailInput.value = '';
+    passInput.value = '';
+}
+limpearFormulario(); 

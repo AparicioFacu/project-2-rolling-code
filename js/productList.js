@@ -245,12 +245,3 @@ const limpiarFormulario = () => {
     document.getElementById('fecha-limite').value = "";
     document.getElementById('descuento').value = "";
 }
-
-const escribirNombreUsuarioLogueado = () => {
-    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
-    console.log(usuarioLogueado.fullname)
-    console.log(usuarioLogueado);
-    tagUserLogged.innerText = usuarioLogueado.fullname;
-}
-
-escribirNombreUsuarioLogueado();

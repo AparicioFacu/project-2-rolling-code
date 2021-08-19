@@ -174,12 +174,4 @@ function botonPag(pag,usuarios){
 }
 mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 paginas(usuarios,paginacionTabla,cantidadElement);
-const tagUserLogged = document.getElementById('usuario-logueado');
-const escribirNombreUsuarioLogueado = () => {
-    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
-    console.log(usuarioLogueado.fullname)
-    console.log(usuarioLogueado);
-    tagUserLogged.innerText = usuarioLogueado.fullname;
-}
 
-escribirNombreUsuarioLogueado();
