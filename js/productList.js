@@ -59,8 +59,8 @@ function mostrarProductosAdmin() {
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-around">
-                            <div onclick="actualizarProducto('${game.id}')" class="text-center background-btn-edit-delete" data-bs-toggle="modal" data-bs-target="#exampleModal"><a class="btn btn-outline-dark mt-auto icon-color" href="javascript:void(0)"><i class="far fa-edit"></i></a></div>
-                            <div onclick="borrarProducto('${game.id}')" class="text-center background-btn-edit-delete"><a class="btn btn-outline-dark mt-auto icon-color" href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></div>
+                            <div onclick="actualizarProducto('${game.id}')" class="text-center" data-bs-toggle="modal" data-bs-target="#exampleModal"><a  class="text-center btn-edit btn-edit-delete" href="javascript:void(0)"><i class="far fa-edit"></i></a></div>
+                            <div onclick="borrarProducto('${game.id}')" class="text-center"><a class="text-center btn-delete btn-edit-delete" href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></div>
                         </div>
                     </div>`
         })
