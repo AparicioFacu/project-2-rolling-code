@@ -20,6 +20,7 @@ const signUpUsuario  = (event) => {
     console.log("te estas logueando");
     //Validamos que al menos todos los campos esten presentes
     if(emailInput.value ==="" || passInput.value==="" || nameInput.value===""){
+        //Verficar que la contraseña tenga al menos 8 caracteres
         console.log("todos los campos son requeridos");
         msjError.innerHTML="Todos los campos son requeridos"
         msjError.setAttribute('class', 'alert alert-danger');
@@ -36,14 +37,19 @@ const signUpUsuario  = (event) => {
             role: 'basic',
             active: true
         }
-        console.log(newUser)
+        console.log(newUser)            
         //Verificamos que no sea un email repetido
         let invalidEmail = false;
-        usuarios.forEach(user => {
+        let passValid = false;
+        usuarios.forEach(user => { 
             if(user.email === newUser.email){
                 invalidEmail=true;
             }
         });
+        if(passInput.value.length >= 8){
+            passValid = true;
+        }
+        console.log(passInput.value.length);
         if(invalidEmail){
             //Esta usando un email que ya se registro ingrese otro 
             console.log("usuario no valido");
@@ -52,7 +58,14 @@ const signUpUsuario  = (event) => {
             setTimeout(()=>{
                 msjError.setAttribute('class', 'd-none')
             }, 1500);
-        }else{
+        } else if(!passValid){
+            msjError.innerHTML="Contraseña no supera los 8 caracteres"
+            msjError.setAttribute('class', 'alert alert-danger');
+            setTimeout(()=>{
+                msjError.setAttribute('class', 'd-none')
+            }, 1500);
+        }
+        else{
             //Es un email valido debemos proseguir
             console.log("registrado correctamente");
             msjError.innerHTML="Registro exitoso"
