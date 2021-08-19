@@ -67,8 +67,8 @@ function crearContenedoresCards() {
                           <span>-${game.descuento}%</span>
                       </div>
                       <div class="col-9 card-precio">
-                          <span><s>ARS$ ${game.precio}</s></span>
-                          <span><i>ARS$ ${
+                          <span><s>AR$ ${game.precio}</s></span>
+                          <span><i>AR$ ${
                             game.precio - (game.descuento * game.precio) / 100
                           }</i></span>
                       </div>
@@ -117,7 +117,7 @@ function mostrarCarouselGames() {
                       <span>${game.categoria2}</span>
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
-                      <p><i>ARS$ ${game.precio}</i></p>
+                      <p><i>AR$ ${game.precio}</i></p>
                       <h5><i class="fab fa-apple me-2"></i><i class="fab fa-windows"></i></h5>
                   </div>
               </div>
@@ -152,7 +152,7 @@ function mostrarCarouselGames() {
                       <span>${game.categoria2}</span>
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
-                      <p><i>ARS$ ${game.precio}</i></p>
+                      <p><i>AR$ ${game.precio}</i></p>
                       <h5><i class="fab fa-apple me-2"></i><i class="fab fa-windows"></i></h5>
                   </div>
               </div>

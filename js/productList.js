@@ -51,8 +51,8 @@ function mostrarProductosAdmin() {
                                     <span>-${game.descuento}%</span>
                                 </div>
                                 <div class="col-9 card-precio">
-                                    <span><s>ARS$ ${game.precio}</s></span>
-                                    <span><i>ARS$ ${
+                                    <span><s>AR$ ${game.precio}</s></span>
+                                    <span><i>AR$ ${
                                     game.precio - (game.descuento * game.precio) / 100
                                     }</i></span>
                                 </div>
