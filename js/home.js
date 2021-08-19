@@ -214,7 +214,6 @@ function cambiarImagen() {
   });
 }
 cambiarImagen();
-<<<<<<< HEAD
 
 const btnLogOut = document.getElementById('log-out');
 const logOutUser = () => {
@@ -225,5 +224,3 @@ const logOutUser = () => {
 }
 
 btnLogOut.addEventListener('click', logOutUser)
-=======
->>>>>>> rodri-develop-branch
