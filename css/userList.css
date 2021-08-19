@@ -107,6 +107,13 @@ body{
 .modal-footer1 {
     border-top: none;
     padding-top: 30px;
+}
+.footerNuevo{
+    background-color: #212529 !important;
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
 }  
 
 
