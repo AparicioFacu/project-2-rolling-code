@@ -35,13 +35,13 @@ botonBuscar.addEventListener("click", () => {
   sidebar.classList.toggle("open");
 });
 
-let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-const notaJson = JSON.stringify(usuarios);
-localStorage.setItem('usuarios', notaJson);
-console.log('usuarios', usuarios);
+let usuarios1 = JSON.parse(localStorage.getItem('usuarios')) || [];
+const notaJson1 = JSON.stringify(usuarios1);
+localStorage.setItem('usuarios', notaJson1);
+console.log('usuarios', usuarios1);
 
 function mostrarName(id){
-  let usuarioActual = usuarios[usuarios.length - 1];
+  let usuarioActual = usuarios1[usuarios1.length - 1];
   console.log('usuarioactual',usuarioActual);
   const contenido = `
    Hola ${usuarioActual.fullname} 

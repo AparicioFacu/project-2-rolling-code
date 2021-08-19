@@ -8,12 +8,9 @@ const editarRolesSelect = document.getElementById('editarRolesSelect');
 const editarCuentaInput = document.getElementById('editarCuentaInput');
 const buttonCuenta = document.getElementById('buttonCuenta');
 
-let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-function actualizarLocalStorage(){
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     const notaJson = JSON.stringify(usuarios);
     localStorage.setItem('usuarios', notaJson);
-}
 
 function eliminarUsuario(id) {
     function usuariosFilter(usuario) {
@@ -21,7 +18,8 @@ function eliminarUsuario(id) {
     };
     const usuariosFiltrados = usuarios.filter(usuariosFilter);
     usuarios = usuariosFiltrados;
-    actualizarLocalStorage();
+    const notaJson = JSON.stringify(usuarios);
+    localStorage.setItem('usuarios', notaJson);
     mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
 }
 
@@ -106,7 +104,8 @@ btnEditar.addEventListener('click', function editarUsuario(event){
     } 
     const usuarioActualizado = usuarios.map(actualizarUsuario);
     usuarios = usuarioActualizado;
-    actualizarLocalStorage();
+    const notaJson = JSON.stringify(usuarios);
+    localStorage.setItem('usuarios', notaJson);
     var myModal = bootstrap.Modal.getInstance(document.getElementById('editarUsuarios'));
     myModal.hide();
     mostrarUsuariosPag(usuarios,tablebody,cantidadElement,pagActual);
