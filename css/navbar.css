@@ -26,7 +26,12 @@ body{
       rgba(0, 0, 0, 1) 100%
   );    
 }
+
 /* NavBar */
+.nav-bar-adm{
+background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
+}
+
 .user-login{
   font-size: 25px;
 }
@@ -212,29 +217,60 @@ color: #858da8;
   }
 }
 
-/* Modal Perfil */
-.modalCabeza h5 {
-  font-family: 'Anton', sans-serif;
-  color: #212529;
+/* ESTILOS DE CARDS */
+
+.contenedor-div{
+  width: 990px;
 }
 
+@media only screen and (max-width: 600px) {
+  .option-styles a{
+    align-items: center;
+    text-align: center;
+  }
+  .option-styles p {
+    font-size: 15px;
+    margin-bottom: 0%;
+   }
+}
+
+.option-styles  {
+  width: 200px;
+  min-width: 200px;
+  cursor: pointer;
+  font-size: 80px;
+  text-align: center;
+  background: #212529;
+  color: #858da8;
+  padding: 4vh;
+}
+
+.option-styles a{
+  text-decoration: none;
+  color: #858da8;
+}
+
+.option-styles a:hover{
+  text-decoration: none;
+  color: rgb(42, 85, 134);
+}
+
+.option-styles p {
+ font-size: 25px;
+ margin-bottom: 0%;
+}
+
+/* Modal Perfil */
 
 .modalPerfil{
-  background-color: #212529;
+  background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
 }
-.modalPerfil p {
-  color: rgba(22, 86, 110, 1);
-  font-size: 20px;
-  font-family: "Teko", sans-serif;
-}
-
 
 /* footer */
 
 .footerAdmin {
   background-color: #212529;
   position: absolute;
-  bottom: 0%;
 }
 .volverArriba{
   border-radius: 50%;
@@ -257,5 +293,16 @@ color: #858da8;
       rgba(0, 0, 0, 1) 100%
   );
 }
+
+.btnRegister{
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(2, 9, 11, 1) 0%,
+      rgba(22, 86, 110, 1) 50%,
+      rgba(2, 9, 11, 1) 100%,
+      rgba(0, 0, 0, 1) 100%
+  );
+  color: white;}
 
 

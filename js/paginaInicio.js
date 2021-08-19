@@ -146,12 +146,3 @@ const loginUsuario = (event) => {
         }
      
 }
-
-// // Intento de hacer el usuario logeado 
-
-// function userLogged(){
-//     var node = document.createElement("li");
-//     var textnode = document.createTextNode("Water");
-//     node.appendChild(textnode);
-//     document.getElementById("userLog").appendChild(node);
-// }

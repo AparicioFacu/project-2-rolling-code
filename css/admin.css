@@ -1,11 +1,11 @@
-
+/* 
 *{
   margin: 0;
   padding: 0;
   font-family: "Poppins" , sans-serif;
-}
+} */
 
-body{
+/* body{
   background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 1) 0%,
@@ -14,10 +14,10 @@ body{
       rgba(2, 9, 11, 1) 100%,
       rgba(0, 0, 0, 1) 100%
   );    
-}
+} */
 
 /* NavBar */
-.user-login{
+/* .user-login{
   font-size: 25px;
 }
 .user-login a {
@@ -28,10 +28,10 @@ color: #858da8;
   }
 .loguito{
   width: 40px;
-}
+} */
 
 /* BARRA NAVEGACION LATERAL */
-.sidebar{
+/* .sidebar{
   position: fixed;
   left: 0;
   top: 0;
@@ -200,11 +200,11 @@ color: #858da8;
   .sidebar li .tooltip{
     display: none;
   }
-}
+} */
 
 /* ESTILOS DE CARDS */
 
-.contenedor-div{
+/* .contenedor-div{
   width: 990px;
 }
 
@@ -243,11 +243,11 @@ color: #858da8;
 .option-styles p {
  font-size: 25px;
  margin-bottom: 0%;
-}
+} */
 
 /* Modal new product */
 
-.modal-newproduct{
+/* .modal-newproduct{
 background: linear-gradient(
   90deg,
   rgba(0, 0, 0, 1) 0%,
@@ -277,10 +277,10 @@ font-style: #858da8;
 }
 .input-newproduct {
 background-color: #325be4;
-}
+} */
 
 /* Modal Perfil */
-.modalCabeza h5 {
+/* .modalCabeza h5 {
   font-family: 'Anton', sans-serif;
   color: #212529;
 }
@@ -293,10 +293,10 @@ background-color: #325be4;
   color: rgba(22, 86, 110, 1);
   font-size: 20px;
   font-family: "Teko", sans-serif;
-}
+} */
 
 /* footer */
-
+/* 
 .footerAdmin {
   background-color: #212529;
 }
@@ -320,7 +320,7 @@ background-color: #325be4;
       rgba(2, 9, 11, 1) 100%,
       rgba(0, 0, 0, 1) 100%
   );
-}
+} */
 
 
 
