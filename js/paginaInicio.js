@@ -64,7 +64,7 @@ const administradoresHarcodeados = [
         email: "santi@gmail.com",
         fullname: "Santiago Romano",
         id: "1709cd68-9450-4ebb-86e8-b407f4012e6d",
-        pass: "santi45",
+        pass: "santiago445",
         role: "admin",
         active: true
     },
