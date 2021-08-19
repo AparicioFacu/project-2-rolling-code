@@ -2,6 +2,8 @@
 const btnNewProduct = document.getElementById('new-product-btn');
 const btnListsProducts = document.getElementById('list-products-btn');
 const btnListsUsers = document.getElementById('list-users-btn');
+const btnUserData = document.getElementById('btn-user-logged-data');
+
 const mostrarFormNuevoProducto = () => {
     console.log('Abrir form de nuevo producto');
 }
@@ -99,3 +101,64 @@ const limpiarFormulario = () => {
     document.getElementById('descuento').value = "";
 }
 
+const traerDataUsuario = () => {
+    console.log("mostrando data user");
+    const fullname = document.getElementById('fullname');
+    const email = document.getElementById('email');
+    const pass = document.getElementById('pass');
+    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+    console.log(usuarioLogueado);
+    fullname.value = usuarioLogueado.fullname;
+    email.value= usuarioLogueado.email;
+    pass.value = usuarioLogueado.pass;
+
+}
+
+btnUserData.addEventListener('click', traerDataUsuario)
+
+const modifyDataUser = (event) => {
+    event.preventDefault();
+    console.log("estas editando tu info de perfil");
+    //tomamos todos los datos del usuario editado 
+    const fullname = document.getElementById('fullname');
+    const email = document.getElementById('email');
+    const pass = document.getElementById('pass');
+    //Buscamos el usurio en cuestion
+    let usuarios = JSON.parse(localStorage.getItem('usuarios'));
+    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+    console.log(usuarios);
+    console.log(usuarioLogueado);
+    const nuevaListaUsuario = usuarios.map(usuario => {
+        if(usuario.id === usuarioLogueado.id) {
+            const usuarioModificado = {
+                ...usuario,
+                fullname: fullname.value,
+                email: email.value,
+                pass: pass.value,
+            }
+            console.log(usuarioModificado);
+            localStorage.removeItem('usuarioLogueado');
+            localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioModificado))
+            return usuarioModificado
+        }else {
+            return usuario
+        }
+    })
+    //Tengo ya el usuario modificado agregado al array
+    localStorage.setItem('usuarios', JSON.stringify(nuevaListaUsuario));//Actualizamos el local storage
+    usuarios = nuevaListaUsuario;
+
+    const botonCerrarFormulario = document.getElementById('btn-close-form-2');
+    botonCerrarFormulario.click();
+}
+
+
+const btnLogOut = document.getElementById('log-out');
+const logOutUser = () => {
+    console.log("log out");
+    //Elimino el usuario logueado 
+    localStorage.removeItem('usuarioLogueado');
+    window.location.href = "../paginaInicio.html";
+}
+
+btnLogOut.addEventListener('click', logOutUser)

@@ -1,7 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+
 .footer{
+    overflow: hidden;
     background-color: #171a21;
 }
-.footer .icono a {
+.footer .iconoFooter a {
     width: 44px;
     height: 44px;
     line-height: 43px;
@@ -11,7 +16,7 @@
     text-decoration: none;
 }
 
-.icono a {
+.iconoFooter a {
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -26,7 +31,7 @@
     transition: all 0.2s linear;
 }
 
-.footer .icono a:hover {
+.footer .iconoFooter a:hover {
     background: linear-gradient(
         90deg,
         rgba(0, 0, 0, 1) 0%,
@@ -39,11 +44,11 @@
     color: white;
 }
 
-.footer .icono a+a {
+.footer .iconoFooter a+a {
     margin-left: 4px;
 }
 
-.footer .titulo {
+.footer .tituloFooter {
     color: rgba(22, 86, 110, 1);
     font-weight: 600;
     font-size: 18px;
@@ -52,7 +57,7 @@
     padding-left: 60px;
 }
 
-.footer .titulo1 {
+.footer .tituloFooter1 {
     color: rgba(22, 86, 110, 1);
     font-weight: 600;
     font-size: 18px;
@@ -77,9 +82,6 @@
     background-color: #0a0c0f;
 }
 .volverArriba{
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
     background: transparent;
     border: solid grey;
 }

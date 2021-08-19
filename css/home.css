@@ -15,6 +15,9 @@ body {
     color: rgba(247, 247, 247, 0.849);
     font-family: "Teko", sans-serif;
 }
+
+/* HEADER */
+
 /* CAROUSEL CONTAINER*/
 /* image */
 .game-image {
@@ -67,6 +70,9 @@ body {
 .game-description img {
     max-width: 80%;
     margin:0 0.5rem 0.3rem 0;
+}
+.game-description img:hover {
+   cursor: pointer;
 }
 .game-description span {
     font-family: Arial, Helvetica, sans-serif;
@@ -132,6 +138,7 @@ body {
         width: 15%;
     }
   }
+
 /* Section Cards */
 .card-game {
    width: 350px;
@@ -169,26 +176,78 @@ body {
     color: rgb(0, 225, 255);
 }
 
+/* Scroll 5 */
 
-/* prueba */
-
-/*  */
-.carousel-caption {
-    background-color: rgb(0 0 0 / 46%);
-    text-align: left;
-    padding: 25px;
+.sc5::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+  }
+  .sc5::-webkit-scrollbar-track {
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .sc5::-webkit-scrollbar-thumb {
+    background: rgb(18, 23, 24);
+    background: linear-gradient(
+        90deg,
+        rgba(20, 64, 73, 0.541) 0%,
+        rgba(15, 74, 97, 0.5) 50%,
+        rgba(7, 125, 179, 0.8) 100%,
+        rgba(0, 172, 255, 1) 100%
+    );
+     border-radius: 10px;
+     box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+  }
+/* HEADER CAROUSEL */
+.header-games {
+    background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
 }
-ol.carousel-indicators {
-    display: block;
-    left: auto;
-    bottom: 50px;
-    right: 15px;
+.efecto-letras{
+    display: inline-flex;
+    color: rgba(0, 172, 255, 1);
+    color: rgba(7, 125, 179);
 }
-.carousel-indicators li {
-    height: 5px;
-    background-color: #ffeb3b;
-    opacity: .6;
+.efecto-w {
+    animation: efecto 2s cubic-bezier(0.77, 0, 0.7, 1);
+}
+.efecto-a {
+    animation: efecto 1.7s cubic-bezier(0.77, 0, 0.7, 1);
+}
+.efecto-r { 
+    animation: efecto 1.5s cubic-bezier(0.77, 0, 0.7, 1);
+}
+@keyframes efecto {
+    0% {
+        transform: scale(0) rotateZ(0);
+        transform: translateX(-1000px);
+    }
+    70% {
+        transform: scale(1.5) rotateZ(540deg);
+        
+    }
+    100% {
+        transform: scale(1) rotateZ(720deg);
+    }
+}
+.efecto-games {
+    display: inline-flex;
+    animation: efecto-games 2.2s cubic-bezier(0.77, 0, 0.7, 1);
+}
+@keyframes efecto-games {
+    0% {
+        transform: translateX(1000px);
+    }
+}
+.efecto-logo {
+    display: inline-flex;
+    animation: efecto-logo 2.2s cubic-bezier(0.77, 0, 0.7, 1);;
+}
+@keyframes efecto-logo {
+    0% {
+        transform: translateY(-500px);
+    }
 }
 
-/*  */
+

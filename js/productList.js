@@ -1,7 +1,7 @@
 const contenedorCards = document.getElementById('contenedor-cards')
 const contenedorPrincipal = document.getElementById('section-contenido-ppal');
 const firstCardsContainer = document.getElementById('first-contenedor-cards');
-
+const tagUserLogged = document.getElementById('usuario-logueado');
 const productosJSON = localStorage.getItem('games');
 let productos = JSON.parse(productosJSON) || [];//Estoy tomando estos productos de LS
 
@@ -51,8 +51,8 @@ function mostrarProductosAdmin() {
                                     <span>-${game.descuento}%</span>
                                 </div>
                                 <div class="col-9 card-precio">
-                                    <span><s>ARS$ ${game.precio}</s></span>
-                                    <span><i>ARS$ ${
+                                    <span><s>AR$ ${game.precio}</s></span>
+                                    <span><i>AR$ ${
                                     game.precio - (game.descuento * game.precio) / 100
                                     }</i></span>
                                 </div>
@@ -245,3 +245,12 @@ const limpiarFormulario = () => {
     document.getElementById('fecha-limite').value = "";
     document.getElementById('descuento').value = "";
 }
+
+const escribirNombreUsuarioLogueado = () => {
+    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+    console.log(usuarioLogueado.fullname)
+    console.log(usuarioLogueado);
+    tagUserLogged.innerText = usuarioLogueado.fullname;
+}
+
+escribirNombreUsuarioLogueado();
