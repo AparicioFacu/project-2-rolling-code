@@ -269,29 +269,22 @@ color: #858da8;
 /* footer */
 
 .footerAdmin {
-  background-color: #212529;
+  background-color: #212529 !important;
   position: absolute;
 }
-.volverArriba{
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  background: transparent;
-  border: solid grey;
+.volverArriba {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  transition: 0.4s;
 }
-.volverArriba i{
-  padding-top: 20px;
+.volverArriba:link,
+.volverArriba:visited,
+.volverArriba:active {
   color: white;
 }
-.volverArriba:hover{
-  background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(2, 9, 11, 1) 0%,
-      rgba(22, 86, 110, 1) 50%,
-      rgba(2, 9, 11, 1) 100%,
-      rgba(0, 0, 0, 1) 100%
-  );
+.volverArriba:hover {
+  color: rgb(16, 69, 90);
 }
 
 .btnRegister{
