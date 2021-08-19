@@ -13,7 +13,8 @@ body{
       rgba(22, 86, 110, 1) 50%,
       rgba(2, 9, 11, 1) 100%,
       rgba(0, 0, 0, 1) 100%
-  );    
+  );
+    
 }
 
 .modal-newproduct-header {
@@ -30,10 +31,16 @@ body{
 /* NavBar */
 .nav-bar-adm{
 background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
+box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+;
+z-index: 1 !important;
 }
 
 .user-login{
   font-size: 25px;
+}
+.user-login li {
+  list-style: none;
 }
 .user-login a {
 color: #858da8;
@@ -51,20 +58,24 @@ color: #858da8;
   left: 0;
   top: 0;
   height: 100%;
-  width: 90px;
-  background: #212529;
-  padding: 6px 14px;
-  z-index: 99;
+  width: 70px;
+  background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 0px;
+  padding-right: 14px;
   transition: all 0.5s ease;
+  z-index: 2;
 }
 .sidebar.open{
-  width: 250px;
+  width: 200px;
 }
 .sidebar .usuario{
   height: 40px;
   display: flex;
   align-items: center;
   position: relative;
+  
 }
 .sidebar .usuario{
   opacity: 1;
@@ -75,7 +86,8 @@ color: #858da8;
   font-size: 20px;
   font-weight: 600;
   opacity: 0;
-  transition: all 0.5s ease;
+  margin-left: 1rem;
+  transition: all 0.5s ease-in-out;
 }
 .sidebar.open .usuario,
 .sidebar.open .usuario .user_name{
@@ -91,7 +103,7 @@ color: #858da8;
   font-size: 23px;
   text-align: start;
   cursor: pointer;
-  transition: all 0.5s ease;
+  text-align: center;
 }
 .sidebar.open .logo-details #btn{
   text-align: right;
@@ -103,19 +115,24 @@ color: #858da8;
   font-size: 28px;
   text-align: center;
   line-height: 60px;
+  
 }
 .sidebar .nav-list{
   height: 100%;
+  margin-left: 6px;
+  transition: all 0.5s ease;
 }
 .sidebar li{
   position: relative;
   list-style: none;
+  
 }
 .sidebar li .tooltip{
   position: absolute;
   top: -20px;
   left: calc(100% + 15px);
   z-index: 3;
+  color: #212529;
   background: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   padding: 6px 12px;
@@ -153,7 +170,7 @@ color: #858da8;
 .sidebar.open input{
   padding: 0 20px 0 50px;
   width: 100%;
-  background: rgb(43, 43, 46);
+  background:transparent;
 }
 .sidebar .buscador{
   position: absolute;
@@ -181,7 +198,7 @@ color: #858da8;
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: #212529;
+  background: transparent;
 }
 .sidebar li a:hover{
   background: rgb(42, 85, 134);
@@ -211,17 +228,30 @@ color: #858da8;
   border-radius: 12px;
 }
 
-@media (max-width: 420px) {
-  .sidebar li .tooltip{
+.mostrarUl{
+  display: block;
+  background-image: repeating-linear-gradient(135deg, rgb(7,23,30) 0px, rgb(7,23,30) 2px,rgb(8,24,31) 2px, rgb(8,24,31) 4px,rgb(9,25,32) 4px, rgb(9,25,32) 6px,rgb(8,24,31) 6px, rgb(8,24,31) 8px,rgb(11,27,34) 8px, rgb(11,27,34) 10px,rgb(10,26,35) 10px, rgb(10,26,35) 12px,rgb(8,24,31) 12px, rgb(8,24,31) 14px,rgb(7,23,30) 14px, rgb(7,23,30) 16px,rgb(11,27,34) 16px, rgb(11,27,34) 18px,rgb(9,25,32) 18px, rgb(9,25,32) 20px,rgb(10,26,35) 20px, rgb(10,26,35) 22px,rgb(10,26,35) 22px, rgb(10,26,35) 24px);
+
+}
+
+.noMostrarUl{
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .sidebar li .tooltip {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar{
+    background: none;
   }
 }
 
 /* ESTILOS DE CARDS */
 
-.contenedor-div{
-  width: 990px;
-}
 
 @media only screen and (max-width: 600px) {
   .option-styles a{
@@ -243,6 +273,8 @@ color: #858da8;
   background: #212529;
   color: #858da8;
   padding: 4vh;
+  box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+  
 }
 
 .option-styles a{
@@ -270,7 +302,10 @@ color: #858da8;
 
 .footerAdmin {
   background-color: #212529 !important;
+  box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
   position: absolute;
+  z-index: 3;
+  
 }
 .volverArriba {
   font-size: 2rem;

@@ -3,7 +3,7 @@ const btnNewProduct = document.getElementById('new-product-btn');
 const btnListsProducts = document.getElementById('list-products-btn');
 const btnListsUsers = document.getElementById('list-users-btn');
 const btnUserData = document.getElementById('btn-user-logged-data');
-
+console.log('boton', btnListsProducts);
 const mostrarFormNuevoProducto = () => {
     console.log('Abrir form de nuevo producto');
 }
