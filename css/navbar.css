@@ -299,12 +299,10 @@ color: #858da8;
 }
 
 /* footer */
-
 .footerAdmin {
   background-color: #212529 !important;
   box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
-  position: absolute;
-  z-index: 3;
+
 }
 .volverArriba {
   font-size: 2rem;
